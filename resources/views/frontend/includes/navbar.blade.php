@@ -28,6 +28,9 @@
                     <a href="{{ route('berita') }}" class="nav-link">Berita</a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('trading') }}" class="nav-link">Trading</a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
                 </li>
                 <li class="nav-item">

@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::post('/about-us', 'Backend\SiteController@storeAbout')->name('admin.setting.store-about');
         Route::resource('/setting', 'Backend\SiteController', ['as' => 'admin']);
     });
+    Route::resource('/menu', 'MenuController');
 });
 
 Route::post('/images', 'Backend\ImageController@upload')->name('image.upload');

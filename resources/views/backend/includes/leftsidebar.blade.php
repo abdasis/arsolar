@@ -151,6 +151,9 @@
                                 <a href="{{ route('admin.setting.general') }}">General</a>
                             </li>
                             <li>
+                                <a href="{{ route('menu.index') }}">Menu</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('admin.setting.seo') }}">SEO</a>
                             </li>
                         </ul>

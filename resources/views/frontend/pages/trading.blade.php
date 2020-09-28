@@ -18,13 +18,14 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-img-top">
-                        <img src="{{ asset('gambar-produk' . $trading->thumbnail ) }}"  alt="product-pic" class="img-fluid">
-                    </div>
+                        <a href="{{ route('produk.show', $product->nama_produk) }}">
+                            <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}"  alt="product-pic" class="img-fluid">
+                        </a>                    </div>
                     <div class="card-body p-2 shadow">
                         <div class="product-info">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h5 class="font-13 mt-0 sp-line-1"><a href="{{ $trading->id }}" class="text-dark">{{ $trading->nama_produk }}</a> </h5>
+                                    <h5 class="font-13 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $product->nama_produk }}</a> </h5>
                                 </div>
                                 <div class="col-auto">
                                     <div class="product-price-tag">

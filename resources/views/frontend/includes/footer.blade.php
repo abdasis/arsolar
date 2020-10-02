@@ -12,7 +12,7 @@
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
                     </div>
                     <p class="text-white-50">{{ $site->nama_situs }} </p>
-                    <p class="text-white-50">{{ $site->about_us }}.</p>
+                    <p class="text-white-50">{!! $site->about_us !!}</p>
                 </div>
             </div>
 
@@ -35,13 +35,18 @@
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">Alamat</p>
                     <ul class="list-unstyled">
-                        @if ($recentproduk->count() > 0)
-                        @foreach ($recentproduk as $produk)
-                        <li><a href="{{ route('produk.show', $produk->id) }}"><i class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk  }}</a></li>
-                        @endforeach
-                    @else
-                        <li>Belum ada produk</li>
-                    @endif
+                        <li class="content">
+                            <b>Email</b>
+                            <p class="text-white">{{ $site->email }}</p>
+                        </li>
+                        <li class="content">
+                            <b>Phone</b>
+                            <p class="text-white">{{ $site->telepon }}</p>
+                        </li>
+                        <li class="content">
+                            <b>Alamat</b>
+                            <p class="text-white">{{ $site->alamat }}</p>
+                        </li>
                     </ul>
                 </div>
             </div>

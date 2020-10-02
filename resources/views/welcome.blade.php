@@ -183,44 +183,6 @@
             </div>
         </div>
         <!-- end row -->
-        <div class="row mb-4">
-            <div class="col-lg-4">
-                <div class="contact-content text-center mt-4">
-                    <div class="contact-icon mb-2">
-                        <i class="mdi mdi-email-outline text-white h2"></i>
-                    </div>
-                    <div class="contact-details text-white">
-                        <h5 class="text-white">E-mail</h5>
-                        <p class="text-white">{{ $site->email }}</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4">
-                <div class="contact-content text-center mt-4">
-                    <div class="contact-icon mb-2">
-                        <i class="mdi mdi-cellphone-iphone text-white h2"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h5 class="text-white">Phone</h5>
-                        <p class="text-white">{{ $site->telepon }}</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end col -->
-            <div class="col-lg-4">
-                <div class="contact-content text-center mt-4">
-                    <div class="contact-icon mb-2">
-                        <i class="mdi mdi-map-marker text-white h2"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h5 class="text-white">Address</h5>
-                        <p class="text-white">{{ $site->alamat }}</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end col -->
-        </div>
         <!-- end row -->
 
         <div class="row justify-content-center">

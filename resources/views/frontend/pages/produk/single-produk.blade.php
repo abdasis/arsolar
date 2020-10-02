@@ -129,11 +129,11 @@
                                     <div class="product-info mt-1">
                                         <div class="row align-items-center">
                                             <div class="col">
-                                                <h5 class="font-15 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $relatedProduct->nama_produk }}</a> </h5>
+                                                <h5 class="font-13 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $product->nama_produk }}</a> </h5>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="product-price-tag">
-                                                    <a href="{{ route('produk.show', $product->nama_produk) }}">
+                                                    <a href="{{ route('produk.show', $product->id) }}">
                                                         <button class="btn btn-soft-info btn-sm"><i class="mdi mdi-open-in-new"></i></button>
                                                     </a>
                                                 </div>

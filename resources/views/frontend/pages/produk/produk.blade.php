@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <div class="product-price-tag">
-                                                <a href="{{ route('produk.show', $product->id) }}">
+                                                <a href="{{ route('produk.show', $product->nama_produk) }}">
                                                     <button class="btn btn-soft-info btn-sm"><i class="mdi mdi-open-in-new"></i></button>
                                                 </a>
                                             </div>

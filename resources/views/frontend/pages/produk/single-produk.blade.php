@@ -120,7 +120,7 @@
                             Related Product
                         </h4>
                         <div class="row">
-                            @foreach ($related as $relatedProduct)
+                            @foreach ($product as $relatedProduct)
                             <div class="col-md-4">
                                 <div class="card-box product-box">
                                     <div class="bg-light">
@@ -133,7 +133,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <div class="product-price-tag">
-                                                    <a href="{{ route('produk.show', $product->id) }}">
+                                                    <a href="{{ route('produk.show', $product->nama_produk) }}">
                                                         <button class="btn btn-soft-info btn-sm"><i class="mdi mdi-open-in-new"></i></button>
                                                     </a>
                                                 </div>

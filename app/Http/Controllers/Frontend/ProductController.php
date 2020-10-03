@@ -56,7 +56,7 @@ class ProductController extends Controller
     {
         $product = Product::where('nama_produk', $id)->first();
         $categories = Category::all();
-        $relatedProduct = Product::where('category', $product->category)->paginate(3);
+        $relatedProduct = Product::paginate(3);
         return view('frontend.pages.produk.single-produk')
             ->withProduct($product)
             ->withCategories($categories)

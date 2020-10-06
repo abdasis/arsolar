@@ -21,9 +21,7 @@
                 <li class="nav-item">
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Service

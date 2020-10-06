@@ -28,7 +28,7 @@
                     <a href="{{ route('berita') }}" class="nav-link">Service</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact-us.create') }}" class="nav-link">Hubungi Kami</a>
+                    <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungi Kami</a>
                 </li>
             </ul>
         </div>

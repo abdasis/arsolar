@@ -22,7 +22,7 @@
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('product') }}" class="nav-link">Produk</a>
+                    <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('berita') }}" class="nav-link">Service</a>

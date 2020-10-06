@@ -16,25 +16,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                 <li class="nav-item active">
-                    <a href="{{ url('/') }}" class="nav-link">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('proyek.index') }}" class="nav-link">Proyek</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('berita') }}" class="nav-link">Berita</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('trading') }}" class="nav-link">Trading</a>
+                    <a href="{{ url('beranda.home') }}" class="nav-link">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungan Kami</a>
+                    <a href="{{ route('product') }}" class="nav-link">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('berita') }}" class="nav-link">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('contact-us.create') }}" class="nav-link">Hubungi Kami</a>
                 </li>
             </ul>
         </div>

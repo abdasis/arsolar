@@ -36,15 +36,15 @@
                     <p class="text-white mb-2 footer-list-title">Alamat</p>
                     <ul class="list-unstyled">
                         <li class="content">
-                            <b>Email</b>
+                            <b><i class="mdi mdi-gmail"></i> Email</b>
                             <p class="text-white">{{ $site->email }}</p>
                         </li>
                         <li class="content">
-                            <b>Phone</b>
+                            <b><i class="mdi mdi-whatsapp"></i> Phone</b>
                             <p class="text-white">{{ $site->telepon }}</p>
                         </li>
                         <li class="content">
-                            <b>Alamat</b>
+                            <b><i class="mdi mdi-map"></i> Alamat</b>
                             <p class="text-white">{{ $site->alamat }}</p>
                         </li>
                     </ul>
@@ -58,7 +58,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="float-left pull-none">
-                    <p class="text-white-50">2015 - 2020 © Soraya Web. Design by <a href="https://abdasis.my.id/" target="_blank" class="text-white-50">Abd. Asis</a> </p>
+                    <p class="text-white-50">2020 © ARE Solar Energy.</p>
                 </div>
                 <div class="float-right pull-none">
                     <ul class="list-inline social-links">

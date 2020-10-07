@@ -14,32 +14,54 @@
         </div>
 
         <div class="row">
-            @foreach ($tradings as $trading)
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-img-top">
-                        <a href="{{ route('produk.show', $product->nama_produk) }}">
-                            <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}"  alt="product-pic" class="img-fluid">
-                        </a>                    </div>
-                    <div class="card-body p-2 shadow">
-                        <div class="product-info">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h5 class="font-13 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $product->nama_produk }}</a> </h5>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="product-price-tag">
-                                        <a href="#">
-                                            <button class="btn btn-soft-info btn-sm"><i class="mdi mdi-open-in-new"></i></button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> <!-- end row -->
-                        </div> <!-- end product info-->
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">PERKINS</h4>
+                        <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_17.png') }}" alt="" srcset="">
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
+
                     </div>
                 </div>
             </div>
-            @endforeach
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">DEUTZ</h4>
+                        <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_21.png') }}" alt="" srcset="">
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">CUMMINS</h4>
+                        <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_14.png') }}" alt="" srcset="">
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">CATERPILAR</h4>
+                        <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_15.png') }}" alt="" srcset="">
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

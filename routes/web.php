@@ -25,6 +25,7 @@ Route::get('about-us', 'Frontend\PageController@aboutUs')->name('aboutus');
 Route::get('berita', 'Frontend\PageController@berita')->name('berita');
 Route::get('berita/{berita}.html', 'Frontend\PageController@singleBerita')->name('berita.single');
 Route::get('trading', 'Frontend\PageController@trading')->name('trading');
+Route::get('service', 'Frontend\PageController@service')->name('service');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/product', 'Backend\ProductController');

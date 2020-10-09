@@ -25,12 +25,12 @@
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Service
+                      Services
                       <span><i class="mdi mdi-arrow-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="{{ route('trading') }}">Trading</a>
-                      <a class="dropdown-item" href="{{ route('produk.index') }}">Product</a>
+                      <a class="dropdown-item" href="{{ route('service') }}">Serivce</a>
                   </li>
                 <li class="nav-item">
                     <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungi Kami</a>

@@ -40,7 +40,7 @@ class PageController extends Controller
         return view('frontend.pages.service');
     }
 
-    
+
     public function transformer()
     {
         return view('frontend.pages.transformer');

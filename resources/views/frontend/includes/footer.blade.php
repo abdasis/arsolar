@@ -22,7 +22,7 @@
                     <ul class="list-unstyled">
                         @if ($recentproduk->count() > 0)
                             @foreach ($recentproduk as $produk)
-                            <li><a href="{{ route('produk.show', $produk->id) }}"><i class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk  }}</a></li>
+                            <li><a href="{{ route('produk.show', $produk->nama_produk) }}"><i class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk  }}</a></li>
                             @endforeach
                         @else
                             <li>Belum ada produk</li>

@@ -751,3 +751,7 @@ h4.widget-title {
 .breadcrumb-item+.breadcrumb-item::before {
     content: '/' !important;
 }
+
+.img-responsive{
+    width: 100%;
+}

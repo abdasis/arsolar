@@ -16,10 +16,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                 <li class="nav-item active">
-                    <a href="{{ url('beranda.home') }}" class="nav-link">Beranda</a>
+                    <a href="{{ url('/') }}" class="nav-link">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
                 </li>
 
                 <li class="nav-item dropdown">

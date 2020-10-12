@@ -9,7 +9,7 @@
             <div class="carousel-inner" role="listbox" style="position: relative;">
                 @foreach ($sliders as $key => $slider)
                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                    <img src="{{ url('/') }}/gambar_slider/{{ $slider->gambar_slider }}"  alt="{{ $slider->gambar_slider }}" class="w-100 img-responsive">
+                    <img src="{{ url('/') }}/gambar_slider/{{ $slider->gambar_slider }}"  alt="{{ $slider->gambar_slider }}" class="d-block w-100">
                 </div>
                 @endforeach
             </div>

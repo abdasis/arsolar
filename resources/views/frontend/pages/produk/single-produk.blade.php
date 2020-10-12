@@ -5,7 +5,7 @@
         <div class="row section-breadcrumb  mt-100">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('produk.index') }}">Produk</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $product->nama_produk }}</li>
                 </ol>

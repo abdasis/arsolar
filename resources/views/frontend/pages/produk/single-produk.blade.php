@@ -48,52 +48,10 @@
                                         <h3 class="product-title">
                                             {{ $product->nama_produk }}
                                         </h3>
-                                        <h5 class="product-subtitle">
-                                            panel surya 20kw lebih murah 220v 60hz di grid 20000 watts sistem tenaga surya
-                                        </h5>
+                                        <p class="product-subtitle">
+                                            {{ $product->diskripsi }}
+                                        </p>
                                         <hr>
-                                        <table class="table table-borderless table-sm">
-                                            <tr>
-                                                <th>Merek </th>
-                                                <td>:</td>
-                                                <td>{{ $product->merk }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Item No.</th>
-                                                <td>:</td>
-                                                <td>{{ $product->nomor_produk }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Type</th>
-                                                <td>:</td>
-                                                <td>{{ $product->tipe_produk }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Max. Power</th>
-                                                <td>:</td>
-                                                <td>{{ $product->max_power }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Output Votagey</th>
-                                                <td>:</td>
-                                                <td>110v 220v</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Certificate</th>
-                                                <td>:</td>
-                                                <td>{{ $product->certificate }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Payment</th>
-                                                <td>:</td>
-                                                <td>{{ $product->payment }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Warrant</th>
-                                                <td>:</td>
-                                                <td>{{ $product->warrant }} Year </td>
-                                            </tr>
-                                        </table>
                                         <a href="#" class="btn btn-success rounded">Hubungi Sekarang</a>
                                     </div>
                                 </div>

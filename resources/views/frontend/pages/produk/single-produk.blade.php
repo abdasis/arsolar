@@ -49,7 +49,7 @@
                                             {{ $product->nama_produk }}
                                         </h3>
                                         <p class="product-subtitle">
-                                            {{ $product->diskripsi }}
+                                            {!! $product->diskripsi !!}
                                         </p>
                                         <hr>
                                         <a href="#" class="btn btn-success rounded">Hubungi Sekarang</a>

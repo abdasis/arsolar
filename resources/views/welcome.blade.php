@@ -3,7 +3,7 @@
 
 @section('content')
         <!-- home start -->
-<section class="slider " style="margin-top: 100px">
+<section class="slider " style="margin-top: 60px">
     <div class="card card-slider">
         <div id="carouselExampleCaption" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox" style="position: relative;">

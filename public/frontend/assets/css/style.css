@@ -729,20 +729,6 @@ h4.widget-title {
     border: 1px solid #dee2e6;
 }
 
-.card-slider {
-    height: 600px;
-    width: auto;
-}
-
-.card-slider img {
-    height: 600px;
-    width: 100%;
-    object-fit: fill;
-}
-
-.image-slider {
-    object-fit: fill;
-}
 
 .mt-100 {
     margin-top: 100px;

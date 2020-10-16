@@ -41,7 +41,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 p-1">
-                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class="img-responsive img-fluid img-thumbnail">
+                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class="img-responsive w-100 img-fluid img-thumbnail">
                                 </div>
                                 <div class="col-md-6 py-3">
                                     <div class="product-spec">

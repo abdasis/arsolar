@@ -81,7 +81,7 @@
                             <div class="col-md-4">
                                 <div class="card-box product-box">
                                     <div class="bg-light">
-                                    <img src="{{ url('/') }}/gambar-produk/{{ $relatedProduct->thumbnail }}" alt="" class="img-responsive img-fluid img-thumbnail">
+                                    <img src="{{ url('/') }}/gambar-produk/{{ $relatedProduct->thumbnail }}" alt="" class="w-100">
                                     </div>
                                     <div class="product-info mt-1">
                                         <div class="row align-items-center">

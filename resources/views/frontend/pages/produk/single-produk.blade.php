@@ -51,7 +51,6 @@
                                             {{ $product->nama_produk }}
                                         </h3>
                                         <hr>
-                                        <a href="#" class="btn btn-success rounded">Hubungi Sekarang</a>
                                     </div>
                                 </div>
                             </div>

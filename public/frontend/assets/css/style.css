@@ -744,5 +744,6 @@ h4.widget-title {
 
 
 .discription-content img{
-    width: 100%;
+    width: 100% !important;
+    object-fit: scale-down;
 }

@@ -1,5 +1,6 @@
 @php
         $site = App\Models\Site::first();
+        $category = App\Models\Category::all();
 @endphp
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark shadow">
@@ -21,19 +22,27 @@
                 <li class="nav-item">
                     <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk
+                        <span><i class="mdi mdi-arrow-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="productDropdown">
+                        @foreach ($category as $item)
+                            <a class="dropdown-item"  href="{{ url('/produk') }}/?kategory={{ $item->nama_kategori }}">{{ $item->nama_kategori }}</a>
+                        @endforeach
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Services
-                      <span><i class="mdi mdi-arrow-down"></i></span>
+                        Services
+                        <span><i class="mdi mdi-arrow-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('trading') }}">Trading</a>
-                      <a class="dropdown-item" href="{{ route('service') }}">Serivce</a>
-                  </li>
+                        <a class="dropdown-item" href="{{ route('trading') }}">Trading</a>
+                        <a class="dropdown-item" href="{{ route('service') }}">Serivce</a>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungi Kami</a>
                 </li>

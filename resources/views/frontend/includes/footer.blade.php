@@ -5,7 +5,7 @@
 
 <footer class="bg-dark footer ">
     <div class="container-fluid">
-        <div class="row mb-5">
+        <div class="row mb-5 justify-content-center">
             <div class="col-lg-6">
                 <div class="pr-lg-4">
                     <div class="mb-4">

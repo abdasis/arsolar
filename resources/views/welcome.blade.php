@@ -96,7 +96,7 @@
 
         <div class="row">
             @foreach ($products as $product)
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card product-box shadow">
                     <div class="card-img-top">
                         <a href="{{ route('produk.show', $product->nama_produk) }}">

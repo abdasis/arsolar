@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        $products = Product::where('status', 'Featured')->paginate(6);
+        $products = Product::where('status', 'Featured')->paginate(4);
         $proyeks = Proyek::paginate(6);
         $site = Site::first();
         $categories = Category::all();

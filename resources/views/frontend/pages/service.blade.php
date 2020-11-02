@@ -8,11 +8,13 @@
                     <h3 class="text-center">
                         Profile
                     </h3>
-                    <div class="row">
-                        <div class="col-md-4"><img class="float-right" src="https://solar.ar-solarwindenergy.com/wp-content/uploads/2020/09/are-300x158.png" height="80" alt=""></div>
+                    <div class="row justify-content-center">
                         <div class="col-md-8">
-                            PT. Anugrah Raya Energy solusi energi terbarukan dengan bernagai jenis produk yang kami tawarkan. Dengan produk yang berkuliatas dan layanan service kami dengan berbagai jenis.   
-                            
+                            <img class="float-left m-3" src="https://solar.ar-solarwindenergy.com/wp-content/uploads/2020/09/are-300x158.png" height="80" alt="">
+                            <p>
+                                PT. Anugrah Raya Energy solusi energi terbarukan dengan bernagai jenis produk yang kami tawarkan. Dengan produk yang berkuliatas dan layanan service kami dengan berbagai jenis.
+                            </p>
+
                             <ol type="1" class="fa-list-ol p-0 mt-2 ml-2">
                                 <li>Test Tegangan Tembus</li>
                                 <li>Treatment oli trafo</li>
@@ -26,11 +28,11 @@
                             </ol>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
 
-     
+
     </div>
 @endsection

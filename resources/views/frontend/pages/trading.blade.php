@@ -20,10 +20,6 @@
                         <h4 class="card-title">PERKINS</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_17.png') }}" alt="" srcset="">
                     </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
-                    </div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -31,10 +27,6 @@
                     <div class="card-body">
                         <h4 class="card-title">DEUTZ</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_21.png') }}" alt="" srcset="">
-                    </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
                     </div>
                 </div>
             </div>
@@ -44,10 +36,6 @@
                         <h4 class="card-title">CUMMINS</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_14.png') }}" alt="" srcset="">
                     </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
-                    </div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -55,10 +43,6 @@
                     <div class="card-body">
                         <h4 class="card-title">CATERPILAR</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_15.png') }}" alt="" srcset="">
-                    </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
                     </div>
                 </div>
             </div>
@@ -82,10 +66,6 @@
                         <h4 class="card-title">TRAFINDO</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_18.png') }}" alt="" srcset="">
                     </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
-                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -94,10 +74,6 @@
                         <h4 class="card-title">GUNINDO</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_19.png') }}" alt="" srcset="">
                     </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
-                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -105,10 +81,6 @@
                     <div class="card-body">
                         <h4 class="card-title">STARLITE</h4>
                         <img class="card-img-top" src="{{ asset('frontend/assets/images/service/page_131.png') }}" alt="" srcset="">
-                    </div>
-                    <div class="card-body">
-                        <button class="btn btn-block btn-sm btn-outline-blue">Lihat Selengkapnya</button>
-
                     </div>
                 </div>
             </div>

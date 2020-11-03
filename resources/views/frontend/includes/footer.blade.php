@@ -6,7 +6,7 @@
 <footer class="bg-dark footer ">
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="pr-lg-4">
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">Produk Terbaru</p>
                     <ul class="list-unstyled">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">Alamat</p>
                     <ul class="list-unstyled">

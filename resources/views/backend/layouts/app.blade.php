@@ -21,7 +21,8 @@
 
         <!-- icons -->
         <link href="{{ url('/') }}/backend/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-
+        @livewireStyles
+        @stack('css')
     </head>
 
     <body data-layout-mode="detached" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "dark", "size": "default", "showuser": true}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": false}'>
@@ -73,6 +74,8 @@
 
         <!-- App js-->
         <script src="{{ url('/') }}/backend/assets/js/app.min.js"></script>
+        @livewireScripts
+        @stack('js')
 
     </body>
 </html>

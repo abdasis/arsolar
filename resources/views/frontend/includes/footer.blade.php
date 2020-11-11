@@ -1,6 +1,6 @@
 @php
     $recentproduk = App\Models\Product::paginate(5);
-    $site = App\Models\Site::first();
+    $site = App\Models\SettingBeranda::first();
 @endphp
 
 <footer class="bg-dark footer ">
@@ -11,8 +11,8 @@
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
                     </div>
-                    <p class="text-white-50">{{ $site->nama_situs }} </p>
-                    <p class="text-white-50">{!! $site->about_us !!}</p>
+                    <p class="text-white-50">{{ $site->judul }} </p>
+                    <p class="text-white-50">{!! $site->kutipan !!}</p>
                 </div>
             </div>
 

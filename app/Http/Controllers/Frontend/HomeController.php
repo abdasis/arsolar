@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Proyek;
+use App\Models\SettingBeranda;
 use App\Models\Site;
 use App\Models\Slider;
 use GuzzleHttp\Handler\Proxy;
@@ -23,7 +24,7 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $products = Product::where('status', 'Featured')->paginate(4);
         $proyeks = Proyek::paginate(6);
-        $site = Site::first();
+        $site = SettingBeranda::first();
         $categories = Category::all();
         return view('welcome')->with([
             'products' => $products,

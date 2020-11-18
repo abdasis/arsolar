@@ -40,18 +40,12 @@
                     <div class="inner-product">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-6 p-1">
-                                    <div class="container">
-                                        <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class=" w-100">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 py-3">
-                                    <div class="product-spec">
-                                        <h3 class="product-title">
-                                            {{ $product->nama_produk }}
-                                        </h3>
-                                        <hr>
-                                    </div>
+                                <div class="col-md-12">
+                                    <h3 class="product-title">
+                                        {{ $product->nama_produk }}
+                                    </h3>
+                                    <hr>
+                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class=" w-100">
                                 </div>
                             </div>
                             <div class="row">

@@ -68,7 +68,7 @@
             <div class="col-md-6">
                 <div class="card-box about-box">
                     <h1>{{ GoogleTranslate::trans($site->judul, Session::get('bahasa') ?? 'id') }}</h1>
-                    <p>{!! GoogleTranslate::trans($site->kutipan, Sesion::get('bahasa') ?? 'id')  !!}</p>
+                    <p>{!! GoogleTranslate::trans($site->kutipan, Session::get('bahasa') ?? 'id')  !!}</p>
                     <a href="{{ route('aboutus') }}">
                         <button class="btn btn-outline-light btn-lg btn-rounded">{{ GoogleTranslate::trans('BACA LEBIH BANYAK', Session::get('bahasa') ?? 'id') }}</button>
                     </a>

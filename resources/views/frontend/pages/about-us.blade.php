@@ -19,8 +19,7 @@
                     <hr>
                     <img src="{{ asset('frontend/assets/images/') . '/' . $site->logo }}" alt="" class="img-responsive">
                     <p>
-                        {!! GoogleTranslate::trans(
-                            strip_tags($site->about_us) ?? 'null', Session::get('bahasa') ?? 'id') !!}
+                        {!! $site->about_us !!}
                     </p>
                 </div>
             </div>

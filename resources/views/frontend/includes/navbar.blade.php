@@ -17,34 +17,46 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                 <li class="nav-item active">
-                    <a href="{{ url('/') }}" class="nav-link">Beranda</a>
+                    <a href="{{ url('/') }}" class="nav-link">{{ GoogleTranslate::trans('Beranda', Session::get('bahasa') ?? 'id') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
+                    <a href="{{ route('aboutus') }}" class="nav-link">{{ GoogleTranslate::trans('Tentang Kami', Session::get('bahasa') ?? 'id') }}</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk
-                        <span><i class="mdi mdi-arrow-down"></i></span>
+                    <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ GoogleTranslate::trans('Produk', Session::get('bahasa') ?? 'id') }}
+                        <span><i class="mdi mdi-menu-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="productDropdown">
                         @foreach ($category as $item)
-                            <a class="dropdown-item"  href="{{ url('/produk') }}/?kategory={{ $item->nama_kategori }}">{{ $item->nama_kategori }}</a>
+                            <a class="dropdown-item"  href="{{ url('/produk') }}/?kategory={{ $item->nama_kategori }}">{{ GoogleTranslate::trans($item->nama_kategori, Session::get('bahasa') ?? 'id') }}</a>
                         @endforeach
                     </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                        <span><i class="mdi mdi-arrow-down"></i></span>
+                        {{ GoogleTranslate::trans('Service', Session::get('bahasa') ?? 'id') }}
+                        <span><i class="mdi mdi-menu-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('trading') }}">Trading</a>
-                        <a class="dropdown-item" href="{{ route('service') }}">Serivce</a>
+                        <a class="dropdown-item" href="{{ route('trading') }}">{{ GoogleTranslate::trans('Trading', Session::get('bahasa') ?? 'id') }}</a>
+                        <a class="dropdown-item" href="{{ route('service') }}">{{ GoogleTranslate::trans('Service', Session::get('bahasa') ?? 'id') }}</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungi Kami</a>
+                    <a href="{{ route('contact-us.index') }}" class="nav-link">{{ GoogleTranslate::trans('Hubungi Kami', Session::get('bahasa') ?? 'id') }}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ GoogleTranslate::trans('Bahasa', Session::get('bahasa') ?? 'id') }}
+                        <span><i class="mdi mdi-menu-down"></i></span>
+
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('bahasa', 'id') }}">ID</a>
+                        <a class="dropdown-item" href="{{ route('bahasa', 'en') }}">EN</a>
+                    </div>
                 </li>
             </ul>
         </div>

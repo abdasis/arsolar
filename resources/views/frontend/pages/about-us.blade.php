@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <div class="container-fluid">
         <div class="row section-breadcrumb">
             <nav aria-label="breadcrumb ">
@@ -16,11 +15,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8 my-5">
                 <div class="contact-wrapper shadow p-3 rounded">
-                    <h3>{{ GoogleTranslate::trans($site->nama_situs) }}</h3>
+                    <h3>{{ GoogleTranslate::trans($site->nama_situs, Session::get('bahasa') ?? 'id') }}</h3>
                     <hr>
-                    <img src="{{ asset('frontend/assets/images/') . '/' . $site->logo }}" alt="" class="img-responsive"> --}}
+                    <img src="{{ asset('frontend/assets/images/') . '/' . $site->logo }}" alt="" class="img-responsive">
                     <p>
-                        {!! GoogleTranslate::trans($site->about_us ?? 'Deskripsikan tentang anda', 'id') !!}
+                        {!! GoogleTranslate::trans($site->about_us ?? 'null', Session::get('bahasa') ?? 'id') !!}
                     </p>
                 </div>
             </div>

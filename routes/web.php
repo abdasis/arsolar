@@ -16,6 +16,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Livewire\Setting\Beranda;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::resource('/menu', MenuController::class);
     });
 });
+
+Route::get('/translate/{bahasa}', function($bahasa){
+    Session::put('bahasa', $bahasa);
+    return redirect()->back();
+})->name('bahasa');
 
 Route::post('/images', [ImageController::class,'upload'])->name('image.upload');
 // Route::group(['prefix' => 'filemanager'], function () {

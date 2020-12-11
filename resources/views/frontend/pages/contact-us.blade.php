@@ -48,8 +48,8 @@
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <label for="nama">Nama Lengkap</label>
-                                <input type="text" class="form-control" placeholder="Masukan Nama Lengkap">
+                                <label for="nama">{{ GoogleTranslate::trans('Nama Lengkap', Session::get('bahasa') ?? 'id') }}</label>
+                                <input type="text" class="form-control" placeholder="{{ GoogleTranslate::trans('Masukan Nama Lengkap', Session::get('bahasa') ?? 'id') }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="nama">Alamat Email</label>

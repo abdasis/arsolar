@@ -67,10 +67,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-box about-box">
-                    <h1>{{ GoogleTranslate::trans($site->judul) }}</h1>
-                    <p>{!! $site->kutipan !!}</p>
+                    <h1>{{ GoogleTranslate::trans($site->judul, Session::get('bahasa') ?? 'id') }}</h1>
+                    <p>{!! GoogleTranslate::trans($site->kutipan, Sesion::get('bahasa') ?? 'id')  !!}</p>
                     <a href="{{ route('aboutus') }}">
-                        <button class="btn btn-outline-light btn-lg btn-rounded">{{ GoogleTranslate::trans('BACA LEBIH BANYAK') }}</button>
+                        <button class="btn btn-outline-light btn-lg btn-rounded">{{ GoogleTranslate::trans('BACA LEBIH BANYAK', Session::get('bahasa') ?? 'id') }}</button>
                     </a>
                 </div>
             </div>
@@ -86,8 +86,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center mb-3">
-                    <h3>PRODUCT KAMI</h3>
-                    <p class="text-muted">Kumpulan produk yang kami sediakan untuk anda.</p>
+                    <h3>{{ GoogleTranslate::trans('PRODUCT KAMI', Session::get('bahasa') ?? 'id') }}</h3>
+                    <p class="text-muted">{{ GoogleTranslate::trans('Kumpulan produk yang kami sediakan untuk anda.', Session::get('bahasa') ?? 'id') }}</p>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                         <div class="product-info">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h5 class="font-15 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $product->nama_produk }}</a> </h5>
+                                    <h5 class="font-15 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ GoogleTranslate::trans($product->nama_produk, Session::get('bahasa') ?? 'id') }}</a> </h5>
                                 </div>
                                 <div class="col-auto">
                                     <div class="product-price-tag">

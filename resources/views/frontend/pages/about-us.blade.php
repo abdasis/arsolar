@@ -16,11 +16,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8 my-5">
                 <div class="contact-wrapper shadow p-3 rounded">
-                    <h3>{{ $site->nama_situs }}</h3>
+                    <h3>{{ GoogleTranslate::trans($site->nama_situs) }}</h3>
                     <hr>
                     <img src="{{ asset('frontend/assets/images/') . '/' . $site->logo }}" alt="" class="img-responsive">
                     <p>
-                        {!! $site->about_us !!}
+                        {!! GoogleTranslate::trans($site->about_us ?? 'Deskripsikan tentang anda', 'id') !!}
                     </p>
                 </div>
             </div>

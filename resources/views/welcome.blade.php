@@ -67,10 +67,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-box about-box">
-                    <h1>{{ $site->judul }}</h1>
+                    <h1>{{ GoogleTranslate::trans($site->judul) }}</h1>
                     <p>{!! $site->kutipan !!}</p>
                     <a href="{{ route('aboutus') }}">
-                        <button class="btn btn-outline-light btn-lg btn-rounded">BACA LEBIH BANYAK</button>
+                        <button class="btn btn-outline-light btn-lg btn-rounded">{{ GoogleTranslate::trans('BACA LEBIH BANYAK') }}</button>
                     </a>
                 </div>
             </div>

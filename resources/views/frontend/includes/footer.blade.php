@@ -56,7 +56,8 @@ $site = App\Models\SettingBeranda::first();
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i> Alamat</b>
-                            <p class="text-white">Ruko The Palem Residence NO. 38B Jl. H. Nausan Sriamur Tambun Utara (
+                            <p class="text-white font-12">Ruko The Palem Residence NO. 38B Jl. H. Nausan Sriamur Tambun
+                                Utara (
                                 Samping Kantor Camat Tambun Utara )
                                 <br>West Java, Indonesia
                             </p>

@@ -11,8 +11,10 @@ $site = App\Models\SettingBeranda::first();
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
                     </div>
-                    <p class="text-white-50">{{ $site->judul }} </p>
-                    <p class="text-white-50">{!! $site->kutipan !!}</p>
+                    <p class="text-white-50">{{GoogleTranslate::trans($site->judul, Session::get('bahasa') ?? 'id') }}
+                    </p>
+                    <p class="text-white-50">{!! GoogleTranslate::trans($site->kutipan, Session::get('bahasa') ?? 'id')
+                        !!}</p>
                 </div>
             </div>
 

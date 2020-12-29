@@ -48,15 +48,17 @@ $site = App\Models\SettingBeranda::first();
                     <ul class="list-unstyled">
                         <li class="content">
                             <b><i class="mdi mdi-gmail"></i> Email</b>
-                            <p class="text-white">{{ $site->email }}</p>
+                            <p class="text-white">agussalim@ar-solarwindenergy.com <br> sabar@ar-solarwindenergy.com</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-whatsapp"></i> Phone</b>
-                            <p class="text-white">{{ $site->telepon }}</p>
+                            <p class="text-white">+62811-152-528 <br> +62812-9591-7075</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i> Alamat</b>
-                            <p class="text-white">{{ $site->alamat }}</p>
+                            <p class="text-white">Ruko The Palem Residence NO. 38B Jl. H. Nausan—Sriamur Tambun Utara (
+                                Samping Kantor Camat Tambun Utara ) <br> West Java
+                                <br> Indonesia</p>
                         </li>
                     </ul>
                 </div>

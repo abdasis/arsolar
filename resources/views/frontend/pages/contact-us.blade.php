@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-wrapper shadow p-3 rounded">
+            <div class="contact-wrapper shadow-md p-3 rounded">
                 <form action="" method="post">
                     @csrf
                     <div class="form-group row">

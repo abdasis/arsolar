@@ -17,6 +17,7 @@
                 <div class="contact-wrapper shadow p-3 rounded">
                     <h3>{{ GoogleTranslate::trans($site->nama_situs, Session::get('bahasa') ?? 'id') }}</h3>
                     <hr>
+
                     <img src="{{ asset('frontend/assets/images/') . '/' . $site->logo }}" alt="" class="img-responsive">
                     <p>
                         {!! $site->about_us !!}
@@ -25,4 +26,6 @@
             </div>
         </div>
     </div>
+
+    
 @endsection

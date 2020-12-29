@@ -1,6 +1,6 @@
 @php
-    $recentproduk = App\Models\Product::paginate(5);
-    $site = App\Models\SettingBeranda::first();
+$recentproduk = App\Models\Product::paginate(5);
+$site = App\Models\SettingBeranda::first();
 @endphp
 
 <footer class="bg-dark footer ">
@@ -18,14 +18,23 @@
 
             <div class="col-lg-4">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Produk Terbaru</p>
+                    <p class="text-white mb-2 footer-list-title">
+                        {{ GoogleTranslate::trans('Produk Terbaru', Session::get('bahasa') ?? 'id') }}</p>
                     <ul class="list-unstyled">
                         @if ($recentproduk->count() > 0)
-                            @foreach ($recentproduk as $produk)
-                            <li><a href="{{ route('produk.show', $produk->nama_produk) }}"><i class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk  }}</a></li>
-                            @endforeach
+                        @foreach ($recentproduk as $produk)
+                        <li>
+                            <a href="{{ route('produk.show', $produk->nama_produk) }}"><i
+                                    class="mdi mdi-chevron-right mr-2"></i>{{ GoogleTranslate::trans($produk->nama_produk, Session::get('bahasa') ?? 'id') }}
+                                </p>
+                            </a>
+                        </li>
+                        @endforeach
                         @else
-                            <li>Belum ada produk</li>
+                        <li>
+                            {{ GoogleTranslate::trans('Belum ada produk', Session::get('bahasa') ?? 'id') }}
+
+                        </li>
                         @endif
                     </ul>
                 </div>
@@ -79,14 +88,14 @@
     <!-- container-fluid -->
 </footer>
 
- <!-- Back to top -->
- <a href="#" class="back-to-top" id="back-to-top"> <i class="mdi mdi-chevron-up"> </i> </a>
+<!-- Back to top -->
+<a href="#" class="back-to-top" id="back-to-top"> <i class="mdi mdi-chevron-up"> </i> </a>
 
- <!-- javascript -->
- <script src="{{ url('/') }}/frontend/assets/js/jquery.min.js"></script>
- <script src="{{ url('/') }}/frontend/assets/js/bootstrap.bundle.min.js"></script>
- <script src="{{ url('/') }}/frontend/assets/js/jquery.easing.min.js"></script>
- <script src="{{ url('/') }}/frontend/assets/js/scrollspy.min.js"></script>
+<!-- javascript -->
+<script src="{{ url('/') }}/frontend/assets/js/jquery.min.js"></script>
+<script src="{{ url('/') }}/frontend/assets/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url('/') }}/frontend/assets/js/jquery.easing.min.js"></script>
+<script src="{{ url('/') }}/frontend/assets/js/scrollspy.min.js"></script>
 
- <!-- custom js -->
- <script src="{{ url('/') }}/frontend/assets/js/app.js"></script>
+<!-- custom js -->
+<script src="{{ url('/') }}/frontend/assets/js/app.js"></script>

@@ -20,10 +20,14 @@
                     <div class="card p-1">
                         <div class="row align-items-center">
                             <div class="col-md-3"><i class="mdi mdi-map-marker  mx-auto mt-4 mdi-36px"></i></div>
-                            <div class="col-md-9">Ruko The Palem Residence NO. 38B <br>
-                                Jl. H. Nausan Sriamur Tambun Utara <br>
-                                (Samping Kantor Camat Tambun Utara ) <br>
-                                West Java, Indonesia</div>
+                            <div class="col-md-9">
+                                <p class="font-11">
+                                    Ruko The Palem Residence NO. 38B <br>
+                                    Jl. H. Nausan Sriamur Tambun Utara <br>
+                                    (Samping Kantor Camat Tambun Utara ) <br>
+                                    West Java, Indonesia
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

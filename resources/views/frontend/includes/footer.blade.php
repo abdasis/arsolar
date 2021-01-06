@@ -44,18 +44,22 @@ $site = App\Models\SettingBeranda::first();
 
             <div class="col-lg-4">
                 <div class="footer-list">
-                    <p class="text-white mb-2 footer-list-title">Alamat</p>
+                    <p class="text-white mb-2 footer-list-title">
+                        {{ GoogleTranslate::trans('Tentang Kami', Session::get('bahasa') ?? 'id') }}</p>
                     <ul class="list-unstyled">
                         <li class="content">
-                            <b><i class="mdi mdi-gmail"></i> Email</b>
+                            <b><i class="mdi mdi-gmail"></i>
+                                {{ GoogleTranslate::trans('Email', Session::get('bahasa') ?? 'id') }}</b>
                             <p class="text-white">agussalim@ar-solarwindenergy.com <br> sabar@ar-solarwindenergy.com</p>
                         </li>
                         <li class="content">
-                            <b><i class="mdi mdi-whatsapp"></i> Phone</b>
+                            <b><i class="mdi mdi-whatsapp"></i>
+                                {{ GoogleTranslate::trans('Phone', Session::get('bahasa') ?? 'id') }}</b>
                             <p class="text-white">+62811-152-528 <br> +62812-9591-7075</p>
                         </li>
                         <li class="content">
-                            <b><i class="mdi mdi-map"></i> Alamat</b>
+                            <b><i class="mdi mdi-map"></i>
+                                {{ GoogleTranslate::trans('Alamat', Session::get('bahasa') ?? 'id') }}</b>
                             <p class="text-white font-13">
                                 Ruko The Palem Residence NO. 38B <br>
                                 Jl. H. Nausan Sriamur Tambun Utara <br>

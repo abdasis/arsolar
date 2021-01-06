@@ -18,16 +18,19 @@
                     <div class="category-widget bg-white shadow py-2">
                         <div class="container">
                             <h4 class="widget-title">
-                                KATEGORI PRODUK
+                                {{ GoogleTranslate::trans('KATEGORI PRODUK', Session::get('bahasa') ?? 'id') }}
+
                             </h4>
                             <div class="inner-category">
                                 <ul class="nav navbar-nav flex-column ml-0 pl-0">
                                     @foreach ($categories as $category)
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="{{ url('/produk') }}/?kategory={{ $category->nama_kategori }}">{{ $category->nama_kategori }}</a>                                      </li>
+                                        <a class="nav-link active"
+                                            href="{{ url('/produk') }}/?kategory={{ $category->nama_kategori }}">{{ GoogleTranslate::trans($category->nama_kategori, Session::get('bahasa') ?? 'id') }}</a>
+                                    </li>
                                     @endforeach
 
-                                  </ul>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -45,19 +48,24 @@
                         <div class="card product-box shadow">
                             <div class="card-img-top">
                                 <a href="{{ route('produk.show', $product->nama_produk) }}">
-                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}"  alt="product-pic" class="img-fluid">
+                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="product-pic"
+                                        class="img-fluid">
                                 </a>
                             </div>
                             <div class="card-body p-2">
                                 <div class="product-info">
                                     <div class="row align-items-center">
                                         <div class="col">
-                                            <h5 class="font-13 mt-0 sp-line-1"><a href="{{ route('produk.show', $product->nama_produk) }}" class="text-dark">{{ $product->nama_produk }}</a> </h5>
+                                            <h5 class="font-13 mt-0 sp-line-1"><a
+                                                    href="{{ route('produk.show', $product->nama_produk) }}"
+                                                    class="text-dark">{{ GoogleTranslate::trans($category->nama_kategori, Session::get('bahasa') ?? 'id') }}</a>
+                                            </h5>
                                         </div>
                                         <div class="col-auto">
                                             <div class="product-price-tag">
                                                 <a href="{{ route('produk.show', $product->nama_produk) }}">
-                                                    <button class="btn btn-soft-info btn-sm"><i class="mdi mdi-open-in-new"></i></button>
+                                                    <button class="btn btn-soft-info btn-sm"><i
+                                                            class="mdi mdi-open-in-new"></i></button>
                                                 </a>
                                             </div>
                                         </div>

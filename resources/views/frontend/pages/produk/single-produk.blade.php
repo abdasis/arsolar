@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="product-title">
-                                    {{ $product->nama_produk }}
+                                    {{ GoogleTranslate::trans($product->nama_produk, Session::get('bahasa') ?? 'id') }}
                                 </h3>
                                 <hr>
                                 <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class=" w-100">
@@ -53,7 +53,8 @@
                             <div class="container">
                                 <div class="product-discription p-2">
                                     <h4 class="widget-title">
-                                        RINCIAN PRODUCT
+                                        {{ GoogleTranslate::trans('RINCIAN PRODUCT', Session::get('bahasa') ?? 'id') }}
+
                                     </h4>
                                     <div class="discription-content">
                                         {!! $product->diskripsi !!}
@@ -68,7 +69,8 @@
             <div class="related-product shadow py-2 my-3">
                 <div class="container">
                     <h4 class="widget-title">
-                        Related Product
+                        {{ GoogleTranslate::trans('Related Product', Session::get('bahasa') ?? 'id') }}
+
                     </h4>
                     <div class="row">
                         @foreach ($related as $relatedProduct)
@@ -83,7 +85,8 @@
                                         <div class="col">
                                             <h5 class="font-13 mt-0 sp-line-1"><a
                                                     href="{{ route('produk.show', $relatedProduct->nama_produk) }}"
-                                                    class="text-dark">{{ $relatedProduct->nama_produk }}</a> </h5>
+                                                    class="text-dark">{{ GoogleTranslate::trans($relatedProduct->nama_produk, Session::get('bahasa') ?? 'id') }}</a>
+                                            </h5>
                                         </div>
                                         <div class="col-auto">
                                             <div class="product-price-tag">

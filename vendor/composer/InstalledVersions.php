@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '43ba858f7b8af1ed651bda18cdb20cbed8ea1fde',
+    'reference' => 'e7137e2561faa682352062ddfe8d51d683c1dbce',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -531,7 +531,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '43ba858f7b8af1ed651bda18cdb20cbed8ea1fde',
+      'reference' => 'e7137e2561faa682352062ddfe8d51d683c1dbce',
     ),
     'laravel/legacy-factories' => 
     array (
@@ -1108,6 +1108,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'spatie/laravel-translatable' => 
+    array (
+      'pretty_version' => '4.6.0',
+      'version' => '4.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5900d6002a5795712058a04c7ca7c2c44b3e0850',
     ),
     'statickidz/php-google-translate-free' => 
     array (

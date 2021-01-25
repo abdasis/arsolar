@@ -93,6 +93,7 @@ class ComposerStaticInit52a4c1ec8c6177cc539c1d3a97bb2380
             'Symfony\\Component\\Console\\' => 26,
             'Stichoza\\GoogleTranslate\\' => 25,
             'Statickidz\\' => 11,
+            'Spatie\\Translatable\\' => 20,
         ),
         'R' => 
         array (
@@ -340,6 +341,10 @@ class ComposerStaticInit52a4c1ec8c6177cc539c1d3a97bb2380
         'Statickidz\\' => 
         array (
             0 => __DIR__ . '/..' . '/statickidz/php-google-translate-free/src',
+        ),
+        'Spatie\\Translatable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-translatable/src',
         ),
         'RealRashid\\SweetAlert\\' => 
         array (
@@ -4847,6 +4852,10 @@ class ComposerStaticInit52a4c1ec8c6177cc539c1d3a97bb2380
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SliderSeeder' => __DIR__ . '/../..' . '/database/seeds/SliderSeeder.php',
+        'Spatie\\Translatable\\Events\\TranslationHasBeenSet' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Events/TranslationHasBeenSet.php',
+        'Spatie\\Translatable\\Exceptions\\AttributeIsNotTranslatable' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Exceptions/AttributeIsNotTranslatable.php',
+        'Spatie\\Translatable\\HasTranslations' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/HasTranslations.php',
+        'Spatie\\Translatable\\TranslatableServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/TranslatableServiceProvider.php',
         'Statickidz\\GoogleTranslate' => __DIR__ . '/..' . '/statickidz/php-google-translate-free/src/GoogleTranslate.php',
         'Stichoza\\GoogleTranslate\\GoogleTranslate' => __DIR__ . '/..' . '/stichoza/google-translate-php/src/GoogleTranslate.php',
         'Stichoza\\GoogleTranslate\\Tokens\\GoogleTokenGenerator' => __DIR__ . '/..' . '/stichoza/google-translate-php/src/Tokens/GoogleTokenGenerator.php',

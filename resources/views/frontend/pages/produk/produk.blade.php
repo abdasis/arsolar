@@ -15,10 +15,10 @@
         <div class="col-md-4">
             <div class="category-wrapper">
                 <div class="kategori-box">
-                    <div class="category-widget bg-white shadow py-2">
+                    <div class="category-widget bg-white shadow-md py-2">
                         <div class="container">
                             <h4 class="widget-title">
-                                {{ GoogleTranslate::trans('KATEGORI PRODUK', Session::get('bahasa') ?? 'id') }}
+                                KATEGORI PRODUK
 
                             </h4>
                             <div class="inner-category">
@@ -26,7 +26,7 @@
                                     @foreach ($categories as $category)
                                     <li class="nav-item">
                                         <a class="nav-link active"
-                                            href="{{ url('/produk') }}/?kategory={{ $category->nama_kategori }}">{{ GoogleTranslate::trans($category->nama_kategori, Session::get('bahasa') ?? 'id') }}</a>
+                                            href="{{ url('/produk') }}/?kategory={{ $category->nama_kategori }}">{{ $category->nama_kategori }}</a>
                                     </li>
                                     @endforeach
 
@@ -44,36 +44,39 @@
                 @if (count($products)>0)
                 <div class="row">
                     @foreach ($products as $product)
+                    @if (Session::get('bahasa') == 'en')
                     <div class="col-md-4">
-                        <div class="card product-box shadow">
+                        <div class="card product-box shadow-md">
                             <div class="card-img-top">
-                                <a href="{{ route('produk.show', $product->nama_produk) }}">
+                                <a href="{{ route('produk.show', $product->slug) }}">
                                     <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="product-pic"
                                         class="img-fluid">
                                 </a>
                             </div>
                             <div class="card-body p-2">
-                                <div class="product-info">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h5 class="font-13 mt-0 sp-line-1"><a
-                                                    href="{{ route('produk.show', $product->nama_produk) }}"
-                                                    class="text-dark">{{ GoogleTranslate::trans($category->nama_kategori, Session::get('bahasa') ?? 'id') }}</a>
-                                            </h5>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="product-price-tag">
-                                                <a href="{{ route('produk.show', $product->nama_produk) }}">
-                                                    <button class="btn btn-soft-info btn-sm"><i
-                                                            class="mdi mdi-open-in-new"></i></button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end row -->
-                                </div> <!-- end product info-->
+                                <h5 class="font-15 sp-line-1"><a href="{{ route('produk.show', $product->slug) }}"
+                                        class="text-dark">{{$product->product }}</a>
+                                </h5>
                             </div>
                         </div> <!-- end card-box-->
                     </div>
+                    @else
+                    <div class="col-md-4">
+                        <div class="card product-box shadow-md">
+                            <div class="card-img-top">
+                                <a href="{{ route('produk.show', $product->siput) }}">
+                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="product-pic"
+                                        class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="card-body p-2">
+                                <h5 class="font-15 sp-line-1"><a href="{{ route('produk.show', $product->slug) }}"
+                                        class="text-dark">{{$product->nama_produk }}</a>
+                                </h5>
+                            </div>
+                        </div> <!-- end card-box-->
+                    </div>
+                    @endif
                     @endforeach
                 </div>
                 @else

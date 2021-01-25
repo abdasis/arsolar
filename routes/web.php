@@ -30,11 +30,12 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('beranda.home');
+Route::post('images/upload', [BackendProductController::class, 'uploadImage'])->name('image.upload')->middleware('auth');
 Route::resource('produk', ProductController::class);
 Route::resource('contact-us', ContactController::class);
 Route::resource('proyek', ProyekController::class);
 Route::get('about-us', [PageController::class, 'aboutUs'])->name('aboutus');
-Route::get('berita', [PageController::class ,'berita'])->name('berita');
+Route::get('berita', [PageController::class, 'berita'])->name('berita');
 Route::get('berita/{berita}.html', [PageController::class, 'singleBerita'])->name('berita.single');
 Route::get('trading', [PageController::class, 'trading'])->name('trading');
 Route::get('service', [PageController::class, 'service'])->name('service');
@@ -52,23 +53,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/seo', [SiteController::class, 'seo'])->name('admin.setting.seo');
         Route::get('/contact-us', [SiteController::class, 'contact'])->name('admin.setting.contact');
         Route::post('/contact-us', [SiteController::class, 'storeContact'])->name('admin.setting.store-contact');
-        Route::get('/about-us', [SiteController::class,'about'])->name('admin.setting.about');
-        Route::post('/about-us', [SiteController::class,'storeAbout'])->name('admin.setting.store-about');
+        Route::get('/about-us', [SiteController::class, 'about'])->name('admin.setting.about');
+        Route::post('/about-us', [SiteController::class, 'storeAbout'])->name('admin.setting.store-about');
         Route::resource('/setting', SiteController::class, ['as' => 'admin']);
         Route::get('beranda', Beranda::class)->name('setting.beranda');
         Route::resource('/menu', MenuController::class);
     });
 });
 
-Route::get('/translate/{bahasa}', function($bahasa){
+Route::get('/translate/{bahasa}', function ($bahasa) {
     Session::put('bahasa', $bahasa);
     return redirect()->back();
 })->name('bahasa');
-
-Route::post('/images', [ImageController::class,'upload'])->name('image.upload');
-// Route::group(['prefix' => 'filemanager'], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

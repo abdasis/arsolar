@@ -65,10 +65,12 @@
                     <div class="collapse" id="sidebarProyek">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('project.create') }}">{{ GoogleTranslate::trans('Tambah Projek', Session::get('bahasa') ?? 'id') }}</a>
+                                <a
+                                    href="{{ route('project.create') }}">{{ GoogleTranslate::trans('Tambah Projek', Session::get('bahasa') ?? 'id') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('project.index') }}">{{ GoogleTranslate::trans('Semua Projek', Session::get('bahasa') ?? 'id') }}</a>
+                                <a
+                                    href="{{ route('project.index') }}">{{ GoogleTranslate::trans('Semua Projek', Session::get('bahasa') ?? 'id') }}</a>
                             </li>
                         </ul>
                     </div>

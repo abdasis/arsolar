@@ -1,5 +1,5 @@
 @php
-        $site = App\Models\Site::first();
+$site = App\Models\Site::first();
 @endphp
 
 <head>

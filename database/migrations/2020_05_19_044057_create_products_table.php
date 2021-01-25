@@ -16,19 +16,21 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('nama_produk', 100);
+            $table->string('siput', 100)->nullable();
             $table->longText('diskripsi')->nullable();
+            $table->string('merek', 100)->nullable();
+            $table->string('kategori', 100);
+            $table->string('status_produk', 100);
+
+            // for translate english
+            $table->string('product', 100);
+            $table->string('slug', 100)->nullable();
+            $table->longText('discription')->nullable();
             $table->string('merk', 100)->nullable();
-            $table->string('nomor_produk', 100)->nullable();
-            $table->string('tipe_produk', 100)->nullable();
-            $table->string('max_power', 100)->nullable();
-            $table->string('certificate', 100)->nullable();
-            $table->string('payment', 100)->nullable();
-            $table->string('warrant', 100)->nullable();
-            $table->string('tag', 100);
             $table->string('category', 100);
             $table->string('status', 100);
+
             $table->string('thumbnail', 255);
-            $table->string('create_by', 100);
             $table->timestamps();
         });
     }

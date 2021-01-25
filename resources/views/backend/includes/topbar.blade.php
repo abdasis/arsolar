@@ -3,25 +3,30 @@
         <ul class="list-unstyled topnav-menu float-right mb-0">
 
             <li class="dropdown d-inline-block d-lg-none">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#"
+                    role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-search noti-icon"></i>
                 </a>
                 <div class="dropdown-menu dropdown-lg dropdown-menu-right p-0">
                     <form class="p-3">
-                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                        <input type="text" class="form-control" placeholder="Search ..."
+                            aria-label="Recipient's username">
                     </form>
                 </div>
             </li>
 
             <li class="dropdown d-none d-lg-inline-block">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen"
+                    href="#">
                     <i class="fe-maximize noti-icon"></i>
                 </a>
             </li>
 
             <li class="dropdown notification-list topbar-dropdown">
-                <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{ url('/') }}/backend/assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+                    href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <img src="{{ url('/') }}/backend/assets/images/users/user-1.jpg" alt="user-image"
+                        class="rounded-circle">
                     <span class="pro-user-name ml-1">
                         {{ Auth::user()->name ?? 'Guest' }} <i class="mdi mdi-chevron-down"></i>
                     </span>

@@ -3,7 +3,7 @@ $site = App\Models\Site::first();
 $category = App\Models\Category::all();
 @endphp
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark shadow">
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark shadow-sm">
     <div class="container-fluid">
         <!-- LOGO -->
         <a class="logo text-uppercase" href="{{ URL('/') }}">

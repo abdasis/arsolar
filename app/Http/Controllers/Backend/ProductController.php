@@ -55,17 +55,11 @@ class ProductController extends Controller
         try {
 
             $newProduct = new Product();
-            $newProduct->nama_produk = $request->get('nama_produk');
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
             $newProduct->diskripsi = $request->deskripsi_produk;
             $newProduct->kategori = $request->get('kategori');
             $newProduct->status_produk = $request->get('status');
-            // translate engglish
-            $newProduct->product = $tr->translate($request->get('nama_produk'));
-            $newProduct->slug = Str::slug($tr->translate($request->get('nama_produk')));
-            $newProduct->discription = $tr->translate($request->get('deskripsi_produk'));
-            $newProduct->category = $tr->translate($request->get('kategori'));
-            $newProduct->status = $tr->translate($request->get('status'));
 
             if ($request->hasFile('thumbnail')) {
                 $thumbnail = $request->file('thumbnail');

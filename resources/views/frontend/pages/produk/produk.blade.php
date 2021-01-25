@@ -44,23 +44,6 @@
                 @if (count($products)>0)
                 <div class="row">
                     @foreach ($products as $product)
-                    @if (Session::get('bahasa') == 'en')
-                    <div class="col-md-4">
-                        <div class="card product-box shadow-md">
-                            <div class="card-img-top">
-                                <a href="{{ route('produk.show', $product->slug) }}">
-                                    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="product-pic"
-                                        class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="card-body p-2">
-                                <h5 class="font-15 sp-line-1"><a href="{{ route('produk.show', $product->slug) }}"
-                                        class="text-dark">{{$product->product }}</a>
-                                </h5>
-                            </div>
-                        </div> <!-- end card-box-->
-                    </div>
-                    @else
                     <div class="col-md-4">
                         <div class="card product-box shadow-md">
                             <div class="card-img-top">
@@ -70,13 +53,12 @@
                                 </a>
                             </div>
                             <div class="card-body p-2">
-                                <h5 class="font-15 sp-line-1"><a href="{{ route('produk.show', $product->slug) }}"
+                                <h5 class="font-15 sp-line-1"><a href="{{ route('produk.show', $product->siput) }}"
                                         class="text-dark">{{$product->nama_produk }}</a>
                                 </h5>
                             </div>
                         </div> <!-- end card-box-->
                     </div>
-                    @endif
                     @endforeach
                 </div>
                 @else

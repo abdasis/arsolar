@@ -39,7 +39,6 @@
         <div class="col-md-9">
             <div class="product-wrapper shadow-md">
                 <div class="inner-product">
-                    @if (Session::get('bahasa') == 'id')
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -69,37 +68,6 @@
                             </div>
                         </div>
                     </div>
-                    @else
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="product-title mt-3">
-                                    {{ Str::title($product->product) }}
-                                </h3>
-                                <div class="meta-product">
-                                    <div class="badge badge-light p-1"><i class="mdi mdi-calendar"></i>
-                                        {{ $product->created_at }}</div>
-                                    <div class="badge badge-light p-1"><i class="mdi mdi-tag"></i>
-                                        {{ $product->category }}</div>
-                                </div>
-                                <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class=" w-100"
-                                    height="400px" style="object-fit: contain">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="container">
-                                <div class="product-discription p-2">
-                                    <h4 class="widget-title">
-                                        RINCIAN PRODUCT
-                                    </h4>
-                                    <div class="discription-content">
-                                        {!! $product->discription !!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                 </div>
             </div>
 

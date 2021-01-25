@@ -9,7 +9,11 @@ class Product extends Model
 {
     use HasTranslations;
 
-    public $translatable = ['name'];
+    public $translatable = [
+        'nama_produk',
+        'diskripsi',
+        'status_produk'
+    ];
     public function categories()
     {
         return $this->hasMany(Category::class);

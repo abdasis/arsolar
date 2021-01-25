@@ -21,15 +21,6 @@ class CreateProductsTable extends Migration
             $table->string('merek', 100)->nullable();
             $table->string('kategori', 100);
             $table->string('status_produk', 100);
-
-            // for translate english
-            $table->string('product', 100);
-            $table->string('slug', 100)->nullable();
-            $table->longText('discription')->nullable();
-            $table->string('merk', 100)->nullable();
-            $table->string('category', 100);
-            $table->string('status', 100);
-
             $table->string('thumbnail', 255);
             $table->timestamps();
         });

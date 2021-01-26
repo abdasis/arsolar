@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Site;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class SiteController extends Controller
 {
@@ -93,9 +95,11 @@ class SiteController extends Controller
 
     public function storeGeneral(Request $request)
     {
+        $tr = new GoogleTranslate('en');
+
         $site = Site::first();
         $site->nama_situs = $request->get('nama_situs');
-        $site->tagline = $request->get('tagline');
+        $site->tagline = ['id' => $request->get('tagline'), 'en' => $tr->translate($request->get('tagline'))];
         if ($request->hasFile('logo_situs')) {
             $logo = $request->file('logo_situs');
             $logo_name = date('d-m-y') . '-' . Str::slug($request->get('nama_situs')) . '.' . $logo->getClientOriginalExtension();
@@ -103,7 +107,7 @@ class SiteController extends Controller
             $site->logo = $logo_name;
         }
 
-        $site->about_us = $request->get('aboutus');
+        $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
         $site->save();
         return redirect()->back()->withStatus('Pengaturan Berhasil disimpan');
     }
@@ -116,12 +120,15 @@ class SiteController extends Controller
     public function about(Request $request)
     {
         $site = Site::first();
+        if (!empty($site)) {
+            $site->setLocale('id');
+        }
         return view('backend.pages.setting.about')->withSite($site);
     }
 
     public function contact(Request $request)
     {
-        $site = Site::first();
+        $site = Site::first()->setLocale(Session::get('bahasa') ?? 'id');
         return view('backend.pages.setting.contact')->withSite($site);
     }
 
@@ -146,13 +153,15 @@ class SiteController extends Controller
 
     public function storeAbout(Request $request)
     {
+        $tr = new GoogleTranslate('en');
+
         if (Site::all()->count() > 0) {
             $site = Site::first();
-            $site->about_us = $request->get('aboutus');
+            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
             $site->save();
         } else {
             $site = new Site;
-            $site->about_us = $request->get('aboutus');
+            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
             $site->save();
         }
 

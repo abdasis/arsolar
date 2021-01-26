@@ -47,7 +47,7 @@
         <div class="row">
             @foreach ($categories as $category)
             <div class="col-lg-3">
-                <div class="features-box shadow">
+                <div class="features-box cursor-pointer shadow-md">
                     <div class="features-img mb-4">
                         <img src="{{ url('/') }}/icon-kategori/{{ $category->icon }}" alt="{{ $category->icon }}">
                     </div>
@@ -73,11 +73,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-box about-box">
-                    <h1>{{ GoogleTranslate::trans($site->judul, Session::get('bahasa') ?? 'id') }}</h1>
-                    <p>{!! GoogleTranslate::trans($site->kutipan, Session::get('bahasa') ?? 'id') !!}</p>
+                    <h1>{{ $site->judul }}</h1>
+                    <p>{!! $site->kutipan !!}</p>
                     <a href="{{ route('aboutus') }}">
-                        <button
-                            class="btn btn-outline-light btn-lg btn-rounded">{{ GoogleTranslate::trans('BACA LEBIH BANYAK', Session::get('bahasa') ?? 'id') }}</button>
+                        <button class="btn btn-outline-light btn-lg btn-rounded">BACA LEBIH BANYAK</button>
                     </a>
                 </div>
             </div>
@@ -93,9 +92,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center mb-3">
-                    <h3>{{ GoogleTranslate::trans('PRODUCT KAMI', Session::get('bahasa') ?? 'id') }}</h3>
+                    <h3>PRODUCT KAMI</h3>
                     <p class="text-muted">
-                        {{ GoogleTranslate::trans('Kumpulan produk yang kami sediakan untuk anda.', Session::get('bahasa') ?? 'id') }}
+                        Kumpulan produk yang kami sediakan untuk anda.
                     </p>
                 </div>
             </div>
@@ -105,76 +104,66 @@
 
         <div class="row">
             @foreach ($products as $product)
-            <div class="col-md-4">
-                <div class="card product-box shadow">
+            <div class="col-md-3">
+                <div class="card product-box shadow-md">
                     <div class="card-img-top">
-                        <a href="{{ route('produk.show', $product->nama_produk) }}">
+                        <a href="{{ route('produk.show', $product->siput) }}">
                             <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}"
                                 alt="{{ $product->nama_produk }}" class="img-fluid align-content-center">
                         </a>
                     </div>
                     <div class="card-body">
                         <div class="product-info">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h5 class="font-15 mt-0 sp-line-1"><a
-                                            href="{{ route('produk.show', $product->nama_produk) }}"
-                                            class="text-dark">{{ GoogleTranslate::trans($product->nama_produk, Session::get('bahasa') ?? 'id') }}</a>
-                                    </h5>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="product-price-tag">
-                                        <a href="{{ route('produk.show', $product->nama_produk) }}">
-                                            <button class="btn btn-soft-info btn-sm"><i
-                                                    class="mdi mdi-open-in-new"></i></button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> <!-- end row -->
-                        </div> <!-- end product info-->
-                    </div>
-                </div> <!-- end card-box-->
+                            <h5 class="font-15 mt-0 sp-line-1">
+                                <a href="{{ route('produk.show', $product->siput) }}"
+                                    class="text-dark">{{ $product->nama_produk }}</a>
+                            </h5>
+                            <div class="meta-produk">
+                                <div class="badge badge-light p-1">
+                                    {{ Carbon\Carbon::parse($product->created_at)->format('d-m-y') }}</div>
+                            </div>
+                        </div>
+                    </div> <!-- end card-box-->
+                </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
-        <!-- end row -->
-    </div> <!-- end container-fluid -->
+            <!-- end row -->
+        </div> <!-- end container-fluid -->
 </section>
 <!-- available demos end -->
 
-<!-- features start -->
-<section class="section">
-    {{-- <div class="container-fluid">
+{{-- <section class="section">
+    <div class="container-fluid">
 
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center mb-4 pb-1">
                     <h3>OUR PROJECT</h3>
-                    <p class="text-muted">The clean and well commented code allows easy customization of the theme.It's designed for describing your app, agency or business.</p>
+                    <p class="text-muted">The clean and well commented code allows easy customization of the theme.It's
+                        designed for describing your app, agency or business.</p>
                 </div>
             </div>
-        </div> --}}
-    <!-- end row -->
+        </div>
 
-    {{-- <div class="row">
+        <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="demo-box bg-white mt-4 p-2">
                     <a href="{{ route('proyek.show', 1) }}" class="text-dark">
-    <img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class="img-fluid mx-auto d-block">
-    <div class="p-3 text-center">
-        <h5 class="mb-0">{{ strtoupper('rumah menggunakan 2kw dari sistem tenaga surya grid di Sri Lanka') }}</h5>
-    </div>
-    </a>
-    </div>
-    </div> --}}
-    {{-- @foreach ($proyeks as $proyek)
+<img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class="img-fluid mx-auto d-block">
+<div class="p-3 text-center">
+    <h5 class="mb-0">
+        {{ strtoupper('rumah menggunakan 2kw dari sistem tenaga surya grid di Sri Lanka') }}
+    </h5>
+</div>
+</a>
+</div>
+</div>
+@foreach ($proyeks as $proyek)
 
-            @endforeach --}}
-    </div>
-    <!-- end row -->
-    </div>
-    <!-- end container-fluid -->
-</section>
+@endforeach
+</div>
+</div>
+</section> --}}
 <!-- features end -->
 
 
@@ -198,7 +187,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
 
-                <div class="custom-form p-5 bg-white">
+                <div class="custom-form shadow-md p-5 bg-white">
                     <div id="message"></div>
                     <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
                         <div class="row">

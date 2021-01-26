@@ -19,7 +19,6 @@
                         <div class="container">
                             <h4 class="widget-title">
                                 KATEGORI PRODUK
-
                             </h4>
                             <div class="inner-category">
                                 <ul class="nav navbar-nav flex-column ml-0 pl-0">

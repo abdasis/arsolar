@@ -15,7 +15,7 @@
         <div class="col-md-3">
             <div class="category-wrapper">
                 <div class="kategori-box">
-                    <div class="category-widget bg-white shadow py-2">
+                    <div class="category-widget bg-white shadow-md py-2">
                         <div class="container">
                             <h4 class="widget-title">
                                 KATEGORI PRODUK

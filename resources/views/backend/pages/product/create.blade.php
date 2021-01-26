@@ -51,13 +51,13 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-white">
                         Option
                     </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputState">Status</label>
-                            <select name="status" id="inputState" class="form-control">
+                            <select name="status" id="inputState" class="form-control shadow-none">
                                 <option value="">Choose</option>
                                 <option {{ old('status') == 'Draft' ? 'selected' : '' }}>Draft</option>
                                 <option {{ old('status') == 'Publish' ? 'selected' : '' }}>Publish</option>
@@ -67,7 +67,7 @@
 
                         <div class="form-group">
                             <label for="inputState">Kategori</label>
-                            <select name="kategori" id="inputState" class="form-control">
+                            <select name="kategori" id="inputState" class="form-control shadow-none">
                                 <option value="">Pilih Kategori</option>
                                 @foreach ($categories as $category)
                                 <option {{ old('kategori') == $category->nama_kategori ? 'selected' : '' }}>
@@ -80,7 +80,8 @@
                             <label>Pilih thumbnail</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="thumbnail" type="file" class="custom-file-input" id="inputGroupFile04">
+                                    <input name="thumbnail" type="file" class="custom-file-input "
+                                        id="inputGroupFile04">
                                     <label class="custom-file-label" for="inputGroupFile04">Pilih gambar</label>
                                 </div>
                             </div>

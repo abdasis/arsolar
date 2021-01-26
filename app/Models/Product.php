@@ -12,7 +12,7 @@ class Product extends Model
     public $translatable = [
         'nama_produk',
         'diskripsi',
-        'status_produk'
+        'kategori'
     ];
     public function categories()
     {

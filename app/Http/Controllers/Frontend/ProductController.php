@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->get('kategory')) {
-            $products = Product::where('kategori', $request->get('kategory'))->get();
+            $products = Product::where('kategori->' . Session::get('bahasa'), $request->get('kategory'))->get();
         } else {
             $products = Product::all();
         }
@@ -56,10 +56,7 @@ class ProductController extends Controller
     public function show($id)
     {
 
-        $product = Product::where('siput', $id)->first()->setLocale('en');
-        dd($product->getTranslation('nama_produk', 'id'));
-
-
+        $product = Product::where('siput', $id)->first()->setLocale(Session::get('bahasa') ?? 'id');
         $categories = Category::all();
         $relatedProduct = Product::paginate(3);
         return view('frontend.pages.produk.single-produk')

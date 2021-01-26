@@ -15,12 +15,12 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_situs', 100)->nullable()->default('Nama Situs');
-            $table->string('tagline', 250)->nullable()->default('Tagline Situs');
-            $table->string('logo', 250)->nullable()->default('Logo situs');
+            $table->longText('nama_situs')->nullable()->default('Nama Situs');
+            $table->longText('tagline')->nullable()->default('Tagline Situs');
+            $table->longText('logo')->nullable()->default('Logo situs');
             $table->longText('about_us')->nullable();
-            $table->string('alamat', 250)->nullable()->default('text');
-            $table->string('telepon', 250)->nullable()->default('text');
+            $table->longText('alamat')->nullable()->default('text');
+            $table->longText('telepon')->nullable()->default('text');
             $table->string('email', 100)->nullable()->default('text');
             $table->timestamps();
         });

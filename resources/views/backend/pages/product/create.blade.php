@@ -25,15 +25,15 @@
                         href="{{ route('product.index') }}"><b>Kembali</b></a></div>
                 @endif
                 <div class="card">
-                    <div class="card-header bg-white border-bottom">
+                    <h5 class="card-header bg-white border-bottom">
                         Tambah Produk
-                    </div>
+                    </h5>
                     <div class="card-body">
                         @csrf
                         <div class="form-group">
                             <label for="nama_produk">Nama Produk</label>
                             <input type="text" name="nama_produk" id="nama_produk"
-                                class="form-control shadow-none @error('nama_produk') is-invalid @enderror"
+                                class="form-control  shadow-none @error('nama_produk') is-invalid @enderror"
                                 value="{{ old('nama_produk') }}" placeholder="Masukan Nama Product" required>
                             @if ($errors->first('nama_produk'))
                             <small class="text-danger">{{ $errors->first('nama_produk') }}</small>
@@ -51,13 +51,13 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
+                    <h5 class="card-header bg-white border-bottom">
                         Option
-                    </div>
+                    </h5>
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputState">Status</label>
-                            <select name="status" id="inputState" class="form-control">
+                            <select name="status" id="inputState" class="form-control shadow-none">
                                 <option value="">Choose</option>
                                 <option {{ old('status') == 'Draft' ? 'selected' : '' }}>Draft</option>
                                 <option {{ old('status') == 'Publish' ? 'selected' : '' }}>Publish</option>
@@ -67,7 +67,7 @@
 
                         <div class="form-group">
                             <label for="inputState">Kategori</label>
-                            <select name="kategori" id="inputState" class="form-control">
+                            <select name="kategori" id="inputState" class="form-control shadow-none">
                                 <option value="">Pilih Kategori</option>
                                 @foreach ($categories as $category)
                                 <option {{ old('kategori') == $category->nama_kategori ? 'selected' : '' }}>

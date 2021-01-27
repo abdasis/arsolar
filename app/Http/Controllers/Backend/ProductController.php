@@ -113,23 +113,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $tr = new GoogleTranslate('en');
         DB::beginTransaction();
         try {
 
             $newProduct = Product::find($id);
-            $newProduct->nama_produk = $request->get('nama_produk');
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
+            $newProduct->siput = Str::slug($request->get('nama_produk'));
             $newProduct->diskripsi = $request->deskripsi_produk;
-            $newProduct->merk = $request->get('merk_produk');
-            $newProduct->nomor_produk = $request->get('nomor_produk');
-            $newProduct->tipe_produk = $request->get('tipe_produk');
-            $newProduct->max_power = $request->get('max_power');
-            $newProduct->certificate = $request->get('certificate');
-            $newProduct->payment = $request->get('payment');
-            $newProduct->warrant = $request->get('warrant');
-            $newProduct->tag = 'Belum tersedia';
-            $newProduct->category = $request->get('kategori') == '' ? 'Tidak berkategori' : $request->get('kategori');
-            $newProduct->status = $request->get('status');
-            $newProduct->create_by = Auth::user()->name;
+            $newProduct->kategori = $request->get('kategori');
+            $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {
                 if ($newProduct->thumbnail && file_exists(public_path() . 'gambar-produk/' . $newProduct->thumbnail)) {
                     File::delete(public_path() . 'gambar-produk/' . $newProduct->thumbnail);

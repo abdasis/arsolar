@@ -8,6 +8,7 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class SliderController extends Controller
 {
@@ -24,9 +25,10 @@ class SliderController extends Controller
 
     public function store(RequestSlider $request)
     {
+        $tr = new GoogleTranslate('en');
         $newSlider = new Slider();
-        $newSlider->nama_slider = $request->get('nama_slider');
-        $newSlider->deskripsi_slider = $request->get('deskripsi_slider');
+        $newSlider->nama_slider = ['id' => $request->get('nama_slider'), 'en' => $tr->translate($request->get('nama_slider'))];
+        $newSlider->deskripsi_slider = ['id' => $request->get('deskripsi_slider'), 'en' => $tr->translate($request->get('deskripsi_slider'))];
         $newSlider->status = $request->status;
         if ($request->hasFile('gambar_slider')) {
             $gambar = $request->file('gambar_slider');

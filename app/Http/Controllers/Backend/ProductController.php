@@ -50,15 +50,14 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        DB::beginTransaction();
         $tr = new GoogleTranslate('en');
         try {
-
+            DB::beginTransaction();
             $newProduct = new Product();
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = $request->deskripsi_produk;
-            $newProduct->kategori = $request->get('kategori');
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate($request->deskripsi_produk)];
+            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $tr->translate($request->get('kategori'))];
             $newProduct->status_produk = $request->get('status');
 
             if ($request->hasFile('thumbnail')) {
@@ -99,7 +98,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $produk = Product::find($id);
+        $produk = Product::find($id)->setLocale('id');
         $categories = Category::all();
         return view('backend.pages.product.edit')->withProduk($produk)->withCategories($categories);
     }
@@ -117,6 +116,7 @@ class ProductController extends Controller
         DB::beginTransaction();
         try {
 
+            DB::beginTransaction();
             $newProduct = Product::find($id);
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
@@ -137,6 +137,8 @@ class ProductController extends Controller
             $newProduct->save();
 
             DB::commit();
+            Alert::success('Selamat', 'Data berhasil disimpan');
+
             return redirect()->back()->with(['status' => 'Produk Berhasil Disimpan!']);
         } catch (\Throwable $th) {
             throw $th;

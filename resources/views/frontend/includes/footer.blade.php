@@ -11,10 +11,9 @@ $site = App\Models\SettingBeranda::first();
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
                     </div>
-                    <p class="text-white-50">{{GoogleTranslate::trans($site->judul, Session::get('bahasa') ?? 'id') }}
+                    <p class="text-white-50">{{$site->judul }}
                     </p>
-                    <p class="text-white-50">{!! GoogleTranslate::trans($site->kutipan, Session::get('bahasa') ?? 'id')
-                        !!}</p>
+                    <p class="text-white-50">{!! $site->kutipan !!}</p>
                 </div>
             </div>
 
@@ -27,15 +26,14 @@ $site = App\Models\SettingBeranda::first();
                         @foreach ($recentproduk as $produk)
                         <li>
                             <a href="{{ route('produk.show', $produk->nama_produk) }}"><i
-                                    class="mdi mdi-chevron-right mr-2"></i>{{ GoogleTranslate::trans($produk->nama_produk, Session::get('bahasa') ?? 'id') }}
+                                    class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk }}
                                 </p>
                             </a>
                         </li>
                         @endforeach
                         @else
                         <li>
-                            {{ GoogleTranslate::trans('Belum ada produk', Session::get('bahasa') ?? 'id') }}
-
+                            Belum ada produk
                         </li>
                         @endif
                     </ul>
@@ -45,21 +43,24 @@ $site = App\Models\SettingBeranda::first();
             <div class="col-lg-4">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">
-                        {{ GoogleTranslate::trans('Tentang Kami', Session::get('bahasa') ?? 'id') }}</p>
+                        Tentang Kami
+                    </p>
                     <ul class="list-unstyled">
                         <li class="content">
                             <b><i class="mdi mdi-gmail"></i>
-                                {{ GoogleTranslate::trans('Email', Session::get('bahasa') ?? 'id') }}</b>
+                                Email</b>
                             <p class="text-white">agussalim@ar-solarwindenergy.com <br> sabar@ar-solarwindenergy.com</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-whatsapp"></i>
-                                {{ GoogleTranslate::trans('Phone', Session::get('bahasa') ?? 'id') }}</b>
+                                Phone
+                            </b>
                             <p class="text-white">+62811-152-528 <br> +62812-9591-7075</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i>
-                                {{ GoogleTranslate::trans('Alamat', Session::get('bahasa') ?? 'id') }}</b>
+                                Alamat
+                            </b>
                             <p class="text-white font-13">
                                 Ruko The Palem Residence NO. 38B <br>
                                 Jl. H. Nausan Sriamur Tambun Utara <br>

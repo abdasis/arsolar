@@ -80,7 +80,8 @@
                             <label>Pilih thumbnail</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="thumbnail" type="file" class="custom-file-input" id="inputGroupFile04">
+                                    <input name="thumbnail" type="file" class="custom-file-input "
+                                        id="inputGroupFile04">
                                     <label class="custom-file-label" for="inputGroupFile04">Pilih gambar</label>
                                 </div>
                             </div>

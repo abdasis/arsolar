@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ProyekController;
 use App\Http\Controllers\MenuController;
 use App\Http\Livewire\Setting\Beranda;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -63,6 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::get('/translate/{bahasa}', function ($bahasa) {
     Session::put('bahasa', $bahasa);
+    App::setLocale(Session::get('bahasa'));
     return redirect()->back();
 })->name('bahasa');
 

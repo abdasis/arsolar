@@ -18,15 +18,15 @@ $category = App\Models\Category::all();
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                 <li class="nav-item active">
-                    <a href="{{ url('/') }}" class="nav-link">Beranda</a>
+                    <a href="{{ url('/') }}" class="nav-link">{{ __('menu.beranda') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('aboutus') }}" class="nav-link">Tentang Kami</a>
+                    <a href="{{ route('aboutus') }}" class="nav-link">{{ __('menu.tentang_kami') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Produk
+                        @lang('menu.layanan')
                         <span><i class="mdi mdi-menu-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="productDropdown">

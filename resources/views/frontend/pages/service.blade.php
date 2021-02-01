@@ -14,29 +14,28 @@
                             src="https://solar.ar-solarwindenergy.com/wp-content/uploads/2020/09/are-300x158.png"
                             height="80" alt="">
                         <p>
-                            {{ GoogleTranslate::trans('PT. Anugrah Raya Energy solusi energi terbarukan dengan bernagai jenis produk yang kami tawarkan. Dengan produk yang
-                            berkuliatas dan layanan service kami dengan berbagai jenis.', Session::get('bahasa') ?? 'id') }}
+                            {{ __('service.nama_perusahaan') }}
                         </p>
 
                         <ol type="1" class="fa-list-ol p-0 mt-2 ml-2">
-                            <li>{{ GoogleTranslate::trans('Test Tegangan Tembus', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.1') }}
                             </li>
                             <li>
-                            <li>{{ GoogleTranslate::trans('Treatment oli trafo', Session::get('bahasa') ?? 'id') }}</li>
-                            <li>{{ GoogleTranslate::trans('Repaire transformer', Session::get('bahasa') ?? 'id') }}</li>
-                            <li>{{ GoogleTranslate::trans('Analisa gas terlarut pada oli dan test kondisi fisik oli trafo', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.2') }}</li>
+                            <li>{{ __('service.3') }}</li>
+                            <li>{{ __('service.4') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Analisa gas terlarut pada oli dan test kondisi fisik oli trafo', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.5') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Service cubical (MVMDB), Capasitor Bank, dan Panel (LVMDB)', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.6') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Pengadaan oli trafo baru', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.7') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Pengadaan trafo, reinstal trafo dan kabel 20 Kv', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.8') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Perbaikan, perawatan (Maintenance) genset dan alternator', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.9') }}
                             </li>
-                            <li>{{ GoogleTranslate::trans('Installation building mechanical dan electrical.', Session::get('bahasa') ?? 'id') }}
+                            <li>{{ __('service.10') }}
                             </li>
                         </ol>
                     </div>

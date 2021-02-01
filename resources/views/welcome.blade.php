@@ -125,8 +125,8 @@
                         </div>
                     </div> <!-- end card-box-->
                 </div>
-                @endforeach
             </div>
+            @endforeach
             <!-- end row -->
         </div> <!-- end container-fluid -->
 </section>

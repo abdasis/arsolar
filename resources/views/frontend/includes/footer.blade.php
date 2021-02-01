@@ -43,7 +43,7 @@ $site = App\Models\SettingBeranda::first();
             <div class="col-lg-4">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">
-                        Tentang Kami
+                        {{ __('footer.tentang_kami') }}
                     </p>
                     <ul class="list-unstyled">
                         <li class="content">
@@ -59,7 +59,7 @@ $site = App\Models\SettingBeranda::first();
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i>
-                                Alamat
+                                {{ __('footer.alamat') }}
                             </b>
                             <p class="text-white font-13">
                                 Ruko The Palem Residence NO. 38B <br>

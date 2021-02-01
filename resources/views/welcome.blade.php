@@ -76,7 +76,8 @@
                     <h1>{{ $site->judul }}</h1>
                     <p>{!! $site->kutipan !!}</p>
                     <a href="{{ route('aboutus') }}">
-                        <button class="btn btn-outline-light btn-lg btn-rounded">BACA LEBIH BANYAK</button>
+                        <button
+                            class="btn btn-outline-light btn-lg btn-rounded">{{ __('footer.selengkapnya') }}</button>
                     </a>
                 </div>
             </div>

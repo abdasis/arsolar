@@ -35,9 +35,9 @@
             <div class="col-lg-6">
                 <div class="text-center mb-4 pb-1">
                     <h3 class="mb-3">
-                        {{ GoogleTranslate::trans('APA YANG KITA TAWARKAN', Session::get('bahasa') ?? 'id') }}</h3>
+                        {{ __('page_title.tawaran_kami') }}</h3>
                     <p class="text-muted">
-                        {{ GoogleTranslate::trans('Kami menetapkan standar untuk layanan pelanggan surya', Session::get('bahasa') ?? 'id') }}
+                        {{ __('page_title.sub_tawaran') }}
                     </p>
                 </div>
             </div>
@@ -92,9 +92,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center mb-3">
-                    <h3>PRODUCT KAMI</h3>
+                    <h3>{{ __('page_title.produk_kami') }}</h3>
                     <p class="text-muted">
-                        Kumpulan produk yang kami sediakan untuk anda.
+                        {{ __('page_title.sub_produk') }}
                     </p>
                 </div>
             </div>

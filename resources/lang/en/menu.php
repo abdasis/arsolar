@@ -4,5 +4,6 @@ return [
     'beranda' => 'Home',
     'tentang_kami' => 'About Us',
     'produk' => 'Product',
-    'layanan' => 'Service'
+    'layanan' => 'Service',
+    'kontak_us' => 'Contact Us',
 ];

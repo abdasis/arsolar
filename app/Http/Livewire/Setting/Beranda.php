@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Setting;
 use App\Models\SettingBeranda;
 use Database\Seeders\SettingBerandaSeeder;
 use Livewire\Component;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class Beranda extends Component
 {
@@ -12,17 +13,19 @@ class Beranda extends Component
 
     public function mount()
     {
-        $kutipan = SettingBeranda::latest()->first();
+        $kutipan = SettingBeranda::latest()->first()->setlocale('id');
         $this->judul = $kutipan->judul;
         $this->kutipan = $kutipan->kutipan;
     }
     public function store()
     {
+        $tr = new GoogleTranslate('en');
+
         $kutipan = SettingBeranda::latest()->first();
-        $kutipan->judul = $this->judul;
-        $kutipan->kutipan = $this->kutipan;
+        $kutipan->judul = ['id' => $this->judul, 'en' => $tr->translate($this->judul)];
+        $kutipan->kutipan = ['id' => $this->kutipan, 'en' => $tr->translate($this->kutipan)];
         $kutipan->save();
-        $this->emit('success', ['title' => 'Berhasil', 'message'=>'Perubahan berhasil disimpan']);
+        $this->emit('success', ['title' => 'Berhasil', 'message' => 'Perubahan berhasil disimpan']);
     }
     public function render()
     {

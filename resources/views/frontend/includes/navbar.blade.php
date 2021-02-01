@@ -26,7 +26,7 @@ $category = App\Models\Category::all();
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @lang('menu.layanan')
+                        @lang('menu.produk')
                         <span><i class="mdi mdi-menu-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="productDropdown">
@@ -49,7 +49,7 @@ $category = App\Models\Category::all();
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact-us.index') }}" class="nav-link">Hubungi Kami</a>
+                    <a href="{{ route('contact-us.index') }}" class="nav-link">{{ __('menu.kontak_us') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions"

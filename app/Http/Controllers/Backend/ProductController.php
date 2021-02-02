@@ -56,7 +56,7 @@ class ProductController extends Controller
             $newProduct = new Product();
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate($request->deskripsi_produk)];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate(strip_tags($request->get('deskripsi_produk')))];
             $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $tr->translate($request->get('kategori'))];
             $newProduct->status_produk = $request->get('status');
 
@@ -120,7 +120,7 @@ class ProductController extends Controller
             $newProduct = Product::find($id);
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = $request->deskripsi_produk;
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate(strip_tags($request->get('deskripsi_produk')))];
             $newProduct->kategori = $request->get('kategori');
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {

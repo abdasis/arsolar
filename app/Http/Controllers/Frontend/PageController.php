@@ -31,7 +31,7 @@ class PageController extends Controller
 
     public function trading()
     {
-        $trading = Product::where('category', 'Trading')->get();
+        $trading = Product::where('kategori', 'Trading')->get();
         return view('frontend.pages.trading')->withTradings($trading);
     }
 

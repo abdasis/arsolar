@@ -5,12 +5,11 @@
     <div class="row">
         <div class="col-md-12 mb-4">
             <h3 class="text-center">
-                {{ GoogleTranslate::trans('Trading', Session::get('bahasa') ?? 'id') }}
+                {{__('page_title.trading') }}
 
             </h3>
             <p class="text-center font-16 ">
-                {{ GoogleTranslate::trans('Kami memasok peralatan mekanik dan distributor resmi penjualan alat-alat berat transformer dan
-                generating set (Genset) berbagai merk seperti :', Session::get('bahasa') ?? 'id') }}
+                {{ __('page_title.sub_trading') }}
 
             </p>
         </div>

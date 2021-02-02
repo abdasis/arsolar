@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->get('kategory')) {
-            $products = Product::where('kategori->' . Session::get('bahasa'), $request->get('kategory'))->get();
+            $products = Product::where('kategori->' . Session::get('bahasa') ?? 'id', $request->get('kategory'))->get();
         } else {
             $products = Product::all();
         }

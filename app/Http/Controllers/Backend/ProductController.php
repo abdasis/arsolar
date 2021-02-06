@@ -165,6 +165,7 @@ class ProductController extends Controller
         $gambar = $request->file('file');
         $gambar_name = date('dmyhs-') . $gambar->getClientOriginalName();
         $gambar->move(public_path('uploads'), $gambar_name);
+
         return response()->json(['location' => asset('uploads') . '/' . $gambar_name]);
     }
 }

@@ -20,7 +20,7 @@ class ProductController extends Controller
 
         // dd(Session::get('bahasa'));
         if ($request->get('kategory')) {
-            $products = Product::where('kategori->' . Session::get('bahasa'), $request->get('kategory'))->get();
+            $products = Product::where('kategori->' . 'id', $request->get('kategory'))->get();
         } else {
             $products = Product::all();
         }

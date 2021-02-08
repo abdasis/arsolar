@@ -88,13 +88,13 @@
                                     <div class="row align-items-center">
                                         <div class="col">
                                             <h5 class="font-13 mt-0 sp-line-1"><a
-                                                    href="{{ route('produk.show', $relatedProduct->nama_produk) }}"
+                                                    href="{{ route('produk.show', $relatedProduct->siput) }}"
                                                     class="text-dark">{{ Str::title($relatedProduct->nama_produk) }}</a>
                                             </h5>
                                         </div>
                                         <div class="col-auto">
                                             <div class="product-price-tag">
-                                                <a href="{{ route('produk.show', $relatedProduct->nama_produk) }}">
+                                                <a href="{{ route('produk.show', $relatedProduct->siput) }}">
                                                     <button class="btn btn-soft-info btn-sm"><i
                                                             class="mdi mdi-open-in-new"></i></button>
                                                 </a>

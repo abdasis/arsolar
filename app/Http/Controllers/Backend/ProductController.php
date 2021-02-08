@@ -45,7 +45,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductRequest $request)
@@ -82,7 +82,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,7 +93,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -106,21 +106,20 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $tr = new GoogleTranslate('en');
-        DB::beginTransaction();
         try {
 
             DB::beginTransaction();
             $newProduct = Product::find($id);
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate(strip_tags($request->get('deskripsi_produk')))];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate($request->get('deskripsi_produk'))];
             $newProduct->kategori = $request->get('kategori');
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {
@@ -136,10 +135,13 @@ class ProductController extends Controller
             }
             $newProduct->save();
 
-            DB::commit();
-            Alert::success('Selamat', 'Data berhasil disimpan');
+            if ($newProduct) {
+                DB::commit();
+                Alert::success('Selamat', 'Data berhasil disimpan');
+                return redirect()->back()->with(['status' => 'Produk Berhasil Disimpan!']);
 
-            return redirect()->back()->with(['status' => 'Produk Berhasil Disimpan!']);
+            }
+
         } catch (\Throwable $th) {
             throw $th;
             DB::rollback();
@@ -150,7 +152,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

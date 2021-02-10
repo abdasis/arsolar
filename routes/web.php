@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ProyekController;
 use App\Http\Controllers\MenuController;
+use App\Http\Livewire\Produk\Translate;
 use App\Http\Livewire\Setting\Beranda;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +44,7 @@ Route::get('service', [PageController::class, 'service'])->name('service');
 Route::get('transformer', [PageController::class, 'transformer'])->name('transformer');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('product-translate/{slug}', Translate::class)->name('product.translate');
     Route::resource('/product', BackendProductController::class);
     Route::resource('/kategori', CategoryController::class);
     Route::resource('/slider', SliderController::class);

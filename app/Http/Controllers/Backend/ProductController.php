@@ -117,7 +117,7 @@ class ProductController extends Controller
         try {
 
             DB::beginTransaction();
-            $newProduct = Product::find($id);
+            $newProduct = Product::find($id)->setLocale('id');
             $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
             $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate(strip_tags($request->get('deskripsi_produk')))];

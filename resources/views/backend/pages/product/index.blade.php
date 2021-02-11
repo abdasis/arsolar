@@ -29,10 +29,8 @@
                         <thead>
                             <tr>
                                 <th>Nama Produk</th>
-                                <th>Merk</th>
-                                <th>Nomor</th>
-                                <th>Max Power</th>
-                                <th>Warrant</th>
+                                <th>Diskripsi</th>
+                                <th>Status</th>
                                 <th>Option</th>
                             </tr>
                         </thead>
@@ -42,10 +40,10 @@
                             @foreach ($products as $key => $product)
                             <tr>
                                 <td>{{ $product->nama_produk }}</td>
-                                <td>{{ $product->merk == '' ? '-' : $product->merk }}</td>
-                                <td>{{ $product->nomor_produk == '' ? '-' : $product->nomor_produk }}</td>
-                                <td>{{ $product->max_power == '' ? '-' : $product->max_power }}</td>
-                                <td>{{ $product->warrant == '' ? '-' : $product->warrant . ' Tahun' }}</td>
+                                <td>{{ Str::limit(strip_tags($product->diskripsi), 50) }}</td>
+                                <td>
+                                    <span class="badge badge-light shadow-none p-1">{{ $product->status_produk }}</span>
+                                </td>
                                 <td>
                                     <div class="row">
                                         <a href="{{ route('product.edit', $product->id) }}">

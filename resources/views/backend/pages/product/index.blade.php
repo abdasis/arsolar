@@ -51,6 +51,9 @@
                                         <a href="{{ route('product.edit', $product->id) }}">
                                             <button class="btn btn-sm text-warning"><i class="fa fa-pencil-alt"></i></button>
                                         </a>
+                                        <a href="{{ route('product.translate', $product->siput) }}">
+                                            <button class="btn btn-sm text-info"><i class="fa fa-language"></i></button>
+                                        </a>
                                         <form action="{{ route('product.destroy', $product->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                             @method('DELETE')
                                             @csrf

@@ -79,9 +79,12 @@
 
     @yield('js')
 
+
     <!-- App js-->
     <script src="{{ url('/') }}/backend/assets/js/app.min.js"></script>
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <x-livewire-alert::scripts />
     @stack('js')
 
 </body>

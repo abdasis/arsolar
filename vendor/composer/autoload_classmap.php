@@ -40,7 +40,6 @@ return array(
     'App\\Http\\Controllers\\MenuController' => $baseDir . '/app/Http/Controllers/MenuController.php',
     'App\\Http\\Controllers\\SettingBerandaController' => $baseDir . '/app/Http/Controllers/SettingBerandaController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
-    'App\\Http\\Livewire\\Produk\\Translate' => $baseDir . '/app/Http/Livewire/Produk/Translate.php',
     'App\\Http\\Livewire\\Setting\\Beranda' => $baseDir . '/app/Http/Livewire/Setting/Beranda.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

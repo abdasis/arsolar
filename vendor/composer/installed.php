@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ffd08bd360b538346156beabfcf74c5d15a1b8b7',
+    'reference' => '4f0011652449d1adfb1e653a18135e8d0fcb7886',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -517,7 +517,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ffd08bd360b538346156beabfcf74c5d15a1b8b7',
+      'reference' => '4f0011652449d1adfb1e653a18135e8d0fcb7886',
     ),
     'laravel/legacy-factories' => 
     array (
@@ -886,8 +886,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0',
+        0 => '1.0',
+        1 => '1.0.0',
       ),
     ),
     'psr/simple-cache' => 

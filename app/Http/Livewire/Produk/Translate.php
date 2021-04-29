@@ -17,11 +17,13 @@ class Translate extends Component
     {
 
         $produk = Product::whereSiput($slug)->first();
-        $this->nama_produk = $produk->nama_produk;
-        $this->siput = $produk->siput;
-        $this->diskripsi = $produk->diskripsi;
-        $this->kategori = $produk->kategori;
-        $this->produk_id = $produk->id;
+        if (!empty($produk)) {
+            $this->nama_produk = $produk->nama_produk;
+            $this->siput = $produk->siput;
+            $this->diskripsi = $produk->diskripsi;
+            $this->kategori = $produk->kategori;
+            $this->produk_id = $produk->id;
+        }
     }
 
     public function translate()

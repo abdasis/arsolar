@@ -50,14 +50,13 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $tr = new GoogleTranslate('en');
         try {
             DB::beginTransaction();
             $newProduct = new Product();
-            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => ''];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate(strip_tags($request->get('deskripsi_produk')))];
-            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $tr->translate($request->get('kategori'))];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => ''];
+            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => ''];
             $newProduct->status_produk = $request->get('status');
 
             if ($request->hasFile('thumbnail')) {
@@ -112,14 +111,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tr = new GoogleTranslate('en');
         try {
 
             DB::beginTransaction();
             $newProduct = Product::find($id)->setLocale('id');
-            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $tr->translate($request->get('nama_produk'))];
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => ''];
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $tr->translate($request->get('deskripsi_produk'))];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => ''];
             $newProduct->kategori = $request->get('kategori');
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {

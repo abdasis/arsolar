@@ -95,11 +95,10 @@ class SiteController extends Controller
 
     public function storeGeneral(Request $request)
     {
-        $tr = new GoogleTranslate('en');
 
         $site = Site::first();
         $site->nama_situs = $request->get('nama_situs');
-        $site->tagline = ['id' => $request->get('tagline'), 'en' => $tr->translate($request->get('tagline'))];
+        $site->tagline = ['id' => $request->get('tagline'), 'en' => $request->get('tagline')];
         if ($request->hasFile('logo_situs')) {
             $logo = $request->file('logo_situs');
             $logo_name = date('d-m-y') . '-' . Str::slug($request->get('nama_situs')) . '.' . $logo->getClientOriginalExtension();
@@ -107,7 +106,7 @@ class SiteController extends Controller
             $site->logo = $logo_name;
         }
 
-        $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
+        $site->about_us = ['id' => $request->get('aboutus'), 'en' => $request->get('aboutus')];
         $site->save();
         return redirect()->back()->withStatus('Pengaturan Berhasil disimpan');
     }

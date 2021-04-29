@@ -43,6 +43,11 @@ class LivewireManager
         return $alias === false ? $default : $alias;
     }
 
+    public function getComponentAliases()
+    {
+        return $this->componentAliases;
+    }
+
     public function getClass($alias)
     {
         $finder = app(LivewireComponentsFinder::class);
@@ -206,15 +211,9 @@ HTML;
     {
         $jsonEncodedOptions = $options ? json_encode($options) : '';
 
-        $devTools = null;
-
-        if (config('app.debug')) {
-            $devTools = 'window.livewire.devTools(true);';
-        }
-
         $appUrl = config('livewire.asset_url') ?: rtrim($options['asset_url'] ?? '', '/');
 
-        $csrf = csrf_token();
+        $jsLivewireToken = app()->has('session.store') ? "'" . csrf_token() . "'" : 'null';
 
         $manifest = json_decode(file_get_contents(__DIR__.'/../dist/manifest.json'), true);
         $versionedFileName = $manifest['/livewire.js'];
@@ -241,33 +240,49 @@ HTML;
             }
         }
 
+	    $devTools = null;
+	    $windowLivewireCheck = null;
+	    $windowAlpineCheck = null;
+        if (config('app.debug')) {
+	        $devTools = 'window.livewire.devTools(true);';
+
+	        $windowLivewireCheck = <<<'HTML'
+if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+HTML;
+
+	        $windowAlpineCheck = <<<'HTML'
+/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+HTML;
+
+        }
+
         // Adding semicolons for this JavaScript is important,
         // because it will be minified in production.
         return <<<HTML
 {$assetWarning}
 <script src="{$fullAssetPath}" data-turbo-eval="false" data-turbolinks-eval="false"></script>
 <script data-turbo-eval="false" data-turbolinks-eval="false"{$nonce}>
-    if (window.livewire) {
-        console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
-    }
+    {$windowLivewireCheck}
 
     window.livewire = new Livewire({$jsonEncodedOptions});
     {$devTools}
     window.Livewire = window.livewire;
     window.livewire_app_url = '{$appUrl}';
-    window.livewire_token = '{$csrf}';
+    window.livewire_token = {$jsLivewireToken};
 
-    /* Make sure Livewire loads first. */
-    if (window.Alpine) {
-        /* Defer showing the warning so it doesn't get buried under downstream errors. */
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function() {
-                console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
-            })
-        });
-    }
-
-    /* Make Alpine wait until Livewire is finished rendering to do its thing. */
+	{$windowAlpineCheck}
     window.deferLoadingAlpine = function (callback) {
         window.addEventListener('livewire:load', function () {
             callback();

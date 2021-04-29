@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal">
+  <component name="dataSourceStorageLocal" created-in="PS-211.7036.8">
     <data-source name="arsolar@127.0.0.1" uuid="f1f0744e-2884-4b7f-8e6e-16d503dfbf35">
       <database-info product="MySQL" version="5.5.5-10.4.17-MariaDB" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MARIADB" exact-version="10.4.17" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>

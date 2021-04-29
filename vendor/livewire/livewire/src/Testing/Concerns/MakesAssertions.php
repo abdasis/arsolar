@@ -28,6 +28,13 @@ trait MakesAssertions
         return $this;
     }
 
+    public function assertCount($name, $value)
+    {
+        PHPUnit::assertCount($value, $this->get($name));
+
+        return $this;
+    }
+
     public function assertPayloadSet($name, $value)
     {
         if (is_callable($value)) {
@@ -270,6 +277,25 @@ trait MakesAssertions
             PHPUnit::assertTrue($value->is($this->lastRenderedView->gatherData()[$key]));
         } else {
             PHPUnit::assertEquals($value, $this->lastRenderedView->gatherData()[$key]);
+        }
+
+        return $this;
+    }
+
+    public function assertFileDownloaded($filename, $content = null)
+    {
+        PHPUnit::assertEquals(
+            $filename,
+            data_get($this->lastResponse, 'original.effects.download.name')
+        );
+
+        if ($content) {
+            $downloadedContent = data_get($this->lastResponse, 'original.effects.download.content');
+
+            PHPUnit::assertEquals(
+                $content,
+                base64_decode($downloadedContent)
+            );
         }
 
         return $this;

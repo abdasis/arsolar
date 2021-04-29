@@ -44,7 +44,10 @@ Route::get('service', [PageController::class, 'service'])->name('service');
 Route::get('transformer', [PageController::class, 'transformer'])->name('transformer');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('product-translate/{slug}', Translate::class)->name('product.translate');
+    Route::group(['prefix' => 'product'], function(){
+       Route::get('translate/{slug', Translate::class)->name('product.translate');
+    });
+
     Route::resource('/product', BackendProductController::class);
     Route::resource('/kategori', CategoryController::class);
     Route::resource('/slider', SliderController::class);

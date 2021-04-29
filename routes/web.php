@@ -45,7 +45,7 @@ Route::get('transformer', [PageController::class, 'transformer'])->name('transfo
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'product'], function(){
-       Route::get('translate/{slug', Translate::class)->name('product.translate');
+       Route::get('translate/{slug}', Translate::class)->name('product.translate');
     });
 
     Route::resource('/product', BackendProductController::class);

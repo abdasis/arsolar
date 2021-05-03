@@ -16,7 +16,7 @@ class Translate extends Component
     public function mount($slug)
     {
 
-        $produk = Product::whereSiput($slug)->first();
+        $produk = Product::whereSiput($slug)->first()->setLocale('en');
         $this->nama_produk = $produk->nama_produk;
         $this->siput = $produk->siput;
         $this->diskripsi = $produk->diskripsi;

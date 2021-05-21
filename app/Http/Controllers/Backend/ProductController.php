@@ -52,13 +52,15 @@ class ProductController extends Controller
     {
         try {
             DB::beginTransaction();
-            $newProduct = new Product();
-            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => ''];
-            $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => ''];
-            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => ''];
-            $newProduct->status_produk = $request->get('status');
 
+            $newProduct = new Product();
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $request->get('nama_produk')];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $request->deskripsi_produk];
+            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $request->get('kategori')];
+            
+            
+            $newProduct->siput = Str::slug($request->get('nama_produk'));            
+            $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {
                 $thumbnail = $request->file('thumbnail');
                 $thumbnail_name = Str::slug($request->get('nama_produk'), '-') . '-' . $thumbnail->getClientOriginalName();
@@ -67,6 +69,7 @@ class ProductController extends Controller
             } else {
                 $newProduct->thumbnail = 'defaul-product-thumbnail.png';
             }
+
             $newProduct->save();
             DB::commit();
             Alert::success('Selamat', 'Data berhasil disimpan');
@@ -97,7 +100,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $produk = Product::find($id)->setLocale('id');
+        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+            $produk = Product::find($id)->setLocale('id');
+        }else{
+            $produk = Product::find($id)->setLocale('en');
+        }
         $categories = Category::all();
         return view('backend.pages.product.edit')->withProduk($produk)->withCategories($categories);
     }
@@ -114,11 +121,19 @@ class ProductController extends Controller
         try {
 
             DB::beginTransaction();
-            $newProduct = Product::find($id)->setLocale('id');
-            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => ''];
+            if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+                $newProduct = Product::find($id)->setLocale('id');
+                $newProduct->nama_produk = ['id' => $request->get('nama_produk')];
+                $newProduct->diskripsi = ['id' => $request->deskripsi_produk];
+                $newProduct->kategori = ['id' => $request->get('kategori')];
+            }else{
+                $newProduct = Product::find($id)->setLocale('en');
+                $newProduct->nama_produk = ['en' => $request->get('nama_produk')];
+                $newProduct->diskripsi = ['en' => $request->deskripsi_produk];
+                $newProduct->kategori = ['en' => $request->get('kategori')];
+            }
+            
             $newProduct->siput = Str::slug($request->get('nama_produk'));
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => ''];
-            $newProduct->kategori = $request->get('kategori');
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {
                 if ($newProduct->thumbnail && file_exists(public_path() . 'gambar-produk/' . $newProduct->thumbnail)) {

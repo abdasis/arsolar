@@ -98,15 +98,17 @@ class SiteController extends Controller
 
         $site = Site::first();
         $site->nama_situs = $request->get('nama_situs');
-        $site->tagline = ['id' => $request->get('tagline'), 'en' => $request->get('tagline')];
         if ($request->hasFile('logo_situs')) {
             $logo = $request->file('logo_situs');
             $logo_name = date('d-m-y') . '-' . Str::slug($request->get('nama_situs')) . '.' . $logo->getClientOriginalExtension();
             $logo->move(public_path('frontend/assets/images/'), $logo_name);
             $site->logo = $logo_name;
         }
-
-        $site->about_us = ['id' => $request->get('aboutus'), 'en' => $request->get('aboutus')];
+        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+            $site->tagline = ['id' => $request->get('tagline')];
+        }else{
+            $site->tagline = ['en' => $request->get('tagline')];
+        }        
         $site->save();
         return redirect()->back()->withStatus('Pengaturan Berhasil disimpan');
     }
@@ -120,7 +122,11 @@ class SiteController extends Controller
     {
         $site = Site::first();
         if (!empty($site)) {
-            $site->setLocale('id');
+            if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+                $site->setLocale('id');
+            }else{
+                $site->setLocale('en');
+            }
         }
         return view('backend.pages.setting.about')->withSite($site);
     }
@@ -152,16 +158,26 @@ class SiteController extends Controller
 
     public function storeAbout(Request $request)
     {
-        $tr = new GoogleTranslate('en');
-
-        if (Site::all()->count() > 0) {
-            $site = Site::first();
-            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
-            $site->save();
-        } else {
-            $site = new Site;
-            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $tr->translate($request->get('aboutus'))];
-            $site->save();
+        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+            if (Site::all()->count() > 0) {
+                $site = Site::first();
+                $site->about_us = ['id' => $request->get('aboutus')];
+                $site->save();
+            } else {
+                $site = new Site;
+                $site->about_us = ['id' => $request->get('aboutus')];
+                $site->save();
+            }
+        }else{
+            if (Site::all()->count() > 0) {
+                $site = Site::first();
+                $site->about_us = ['en' => $request->get('aboutus')];
+                $site->save();
+            } else {
+                $site = new Site;
+                $site->about_us = ['en' => $request->get('aboutus')];
+                $site->save();
+            }
         }
 
         return redirect()->back()->withStatus('Halaman About Berhasil Diperbarui');

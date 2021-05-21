@@ -58,7 +58,8 @@ class ProductController extends Controller
     public function show($id)
     {
 
-        $product = Product::where('siput', $id)->first()->setLocale(Session::get('bahasa') ?? 'id');
+        // $product = Product::where('siput', $id)->first()->setLocale(Session::get('bahasa') ?? 'id');
+        $product = Product::where('siput', $id)->first();
         $categories = Category::all();
         $relatedProduct = Product::paginate(3);
         return view('frontend.pages.produk.single-produk')

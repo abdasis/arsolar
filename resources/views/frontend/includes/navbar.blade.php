@@ -40,7 +40,7 @@ $category = App\Models\Category::all();
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Service
+                        Service {{--dd(session()->all())--}}
                         <span><i class="mdi mdi-menu-down"></i></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,7 +54,7 @@ $category = App\Models\Category::all();
                 <li class="nav-item dropdown">
                     <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @if (Session::get('bahasa') == 'id')
+                        @if (Session::get('bahasa') == 'id' || empty(Session::get('bahasa')))
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/1x1/id.svg"
                             height="15px" width="auto" alt="">
                         @else

@@ -25,10 +25,9 @@ class SliderController extends Controller
 
     public function store(RequestSlider $request)
     {
-        $tr = new GoogleTranslate('en');
         $newSlider = new Slider();
-        $newSlider->nama_slider = ['id' => $request->get('nama_slider'), 'en' => $tr->translate($request->get('nama_slider'))];
-        $newSlider->deskripsi_slider = ['id' => $request->get('deskripsi_slider'), 'en' => $tr->translate($request->get('deskripsi_slider'))];
+        $newSlider->nama_slider = ['id' => $request->get('nama_slider'), 'en' => $request->get('nama_slider')];
+        $newSlider->deskripsi_slider = ['id' => $request->get('deskripsi_slider'), 'en' => $request->get('deskripsi_slider')];
         $newSlider->status = $request->status;
         if ($request->hasFile('gambar_slider')) {
             $gambar = $request->file('gambar_slider');
@@ -43,14 +42,26 @@ class SliderController extends Controller
     }
     public function edit($id)
     {
-        $slider = Slider::find($id);
+        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+            $slider = Slider::find($id)->setLocale('id');
+        }else{
+            $slider = Slider::find($id)->setLocale('en');
+        }
         return view('backend.pages.sliders.edit')->withSlider($slider);
     }
     public function update(Request $request, $id)
     {
-        $newSlider = Slider::find($id);
-        $newSlider->nama_slider = $request->get('nama_slider');
-        $newSlider->deskripsi_slider = $request->get('deskripsi_slider');
+        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
+            $newSlider = Slider::find($id)->setLocale('id');
+            $newSlider->nama_slider = ['id' => $request->get('nama_slider')];
+            $newSlider->deskripsi_slider = ['id' => $request->get('deskripsi_slider')];
+        }else{
+            $newSlider = Slider::find($id)->setLocale('en');
+            $newSlider->nama_slider = ['en' => $request->get('nama_slider')];
+            $newSlider->deskripsi_slider = ['en' => $request->get('deskripsi_slider')];
+        }
+        
+       
         $newSlider->status = $request->status;
         if ($request->hasFile('gambar_slider')) {
             if ($newSlider->gambar_slider && file_exists(public_path('gambar_slider/') . $newSlider->gambar_slider)) {

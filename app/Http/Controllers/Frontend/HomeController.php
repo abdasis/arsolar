@@ -24,13 +24,13 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $products = Product::where('status_produk', 'Featured')->paginate(4);
         $proyeks = Proyek::paginate(6);
-        $site = SettingBeranda::first();
+        $site = Site::first();
         $categories = Category::all();
-        return view('welcome')->with([
+        return view('welcome',[
             'products' => $products,
             'sliders' => $sliders,
             'proyeks' => $proyeks,
-            'site' => $site,
+            'beranda' => $site,
             'categories' => $categories
         ]);
     }

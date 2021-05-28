@@ -44,6 +44,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="">Keterangan Situs</label>
+                        <textarea name="about_us" id="" cols="30" rows="10" class="form-control">{{$site->about_us}}</textarea>
+                    </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary shadow-none">Simpan Pengaturan</button>

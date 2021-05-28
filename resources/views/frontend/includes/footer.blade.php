@@ -1,6 +1,6 @@
 @php
 $recentproduk = App\Models\Product::paginate(5);
-$site = App\Models\SettingBeranda::first();
+$site = App\Models\Site::first();
 @endphp
 
 <footer class="bg-dark footer ">

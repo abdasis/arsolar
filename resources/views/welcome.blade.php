@@ -73,8 +73,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-box about-box">
-                    <h1>{{ $site->judul }}</h1>
-                    <p>{!! $site->kutipan !!}</p>
+                    <h1>{{ $beranda->nama_situs }}</h1>
+                    <p>{!! $beranda->about_us !!}</p>
                     <a href="{{ route('aboutus') }}">
                         <button
                             class="btn btn-outline-light btn-lg btn-rounded">{{ __('footer.selengkapnya') }}</button>
@@ -131,43 +131,6 @@
             <!-- end row -->
         </div> <!-- end container-fluid -->
 </section>
-<!-- available demos end -->
-
-{{-- <section class="section">
-    <div class="container-fluid">
-
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center mb-4 pb-1">
-                    <h3>OUR PROJECT</h3>
-                    <p class="text-muted">The clean and well commented code allows easy customization of the theme.It's
-                        designed for describing your app, agency or business.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="demo-box bg-white mt-4 p-2">
-                    <a href="{{ route('proyek.show', 1) }}" class="text-dark">
-<img src="{{ url('/') }}/gambar-produk/{{ $product->thumbnail }}" alt="" class="img-fluid mx-auto d-block">
-<div class="p-3 text-center">
-    <h5 class="mb-0">
-        {{ strtoupper('rumah menggunakan 2kw dari sistem tenaga surya grid di Sri Lanka') }}
-    </h5>
-</div>
-</a>
-</div>
-</div>
-@foreach ($proyeks as $proyek)
-
-@endforeach
-</div>
-</div>
-</section> --}}
-<!-- features end -->
-
-
 <!-- contact start -->
 <section class="section pb-5 bg-gradient" id="contact">
     <div class="bg-shape">

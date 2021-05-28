@@ -7,6 +7,7 @@ use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class SiteController extends Controller
@@ -108,8 +109,10 @@ class SiteController extends Controller
             $site->tagline = ['id' => $request->get('tagline')];
         }else{
             $site->tagline = ['en' => $request->get('tagline')];
-        }        
+        }
+        $site->about_us = $request->get('about_us');
         $site->save();
+        Alert::success('Berhasil', 'Pengaturan situs berhasil diperbarui');
         return redirect()->back()->withStatus('Pengaturan Berhasil disimpan');
     }
 

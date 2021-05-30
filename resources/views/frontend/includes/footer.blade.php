@@ -25,7 +25,7 @@ $site = App\Models\Site::first();
                         @if ($recentproduk->count() > 0)
                         @foreach ($recentproduk as $produk)
                         <li>
-                            <a href="{{ route('produk.show', $produk->nama_produk) }}"><i
+                            <a href="{{ route('produk.show', $produk->siput) }}"><i
                                     class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk }}
                                 </p>
                             </a>

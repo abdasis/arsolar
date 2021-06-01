@@ -19,7 +19,7 @@ class ProyekController extends Controller
      */
     public function index()
     {
-        $proyek = Proyek::all();
+        $proyek = Proyek::orderBy('id', 'DESC')->get();
         return view('backend.pages.project.index')->withProjects($proyek);
     }
 

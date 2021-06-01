@@ -18,7 +18,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             @if (Session::has('status'))
             <div class="alert alert-success">{{ Session::get('status') }}</div>
             @endif
@@ -35,6 +35,15 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-info shadow-none">Simpan Pengaturan</button>
 
+                </div>
+        </div>
+
+        <div class="col-6">
+                <div class="form-group">
+                    <label for="">About Sites</label>
+                    <textarea name="aboutus_eng" id="editor" cols="4" rows="5" class="form-control shadow-none"
+                        placeholder="Input about us">{{ $site_eng->about_us ?? '' }}</textarea>
+                    <small class="text-muted">Used for about us page</small>
                 </div>
             </form>
         </div>

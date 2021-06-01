@@ -26,7 +26,7 @@
                     <p></p>
                 </div> <!-- end card body-->
                 <div class="card-body p-2">
-                    <table id="basic-datatable" class="table dt-responsive table-striped table-sm nowrap w-100 p-0">
+                    <table id="proyek-datatable" class="table dt-responsive table-striped table-sm nowrap w-100 p-0">
                         <thead>
                             <tr>
                                 <th>Nama Proyek</th>
@@ -78,4 +78,9 @@
 <script src="{{ url('/') }}/backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{ url('/') }}/backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 <script src="{{ url('/') }}/backend/assets/js/pages/datatables.init.js"></script>
+<script type="text/javascript">
+    $('#proyek-datatable').DataTable({
+        "ordering": false
+    });
+</script>
 @endsection

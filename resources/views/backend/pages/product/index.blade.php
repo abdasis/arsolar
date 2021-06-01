@@ -25,7 +25,7 @@
                     <h4 class="header-title">Daftar Product</h4>
                     <p></p>
 
-                    <table id="basic-datatable" class="table dt-responsive table-striped table-sm nowrap w-100">
+                    <table id="product-datatable" class="table dt-responsive table-striped table-sm nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Nama Produk</th>
@@ -48,9 +48,6 @@
                                     <div class="row">
                                         <a href="{{ route('product.edit', $product->id) }}">
                                             <button class="btn btn-sm text-warning"><i class="fa fa-pencil-alt"></i></button>
-                                        </a>
-                                        <a href="{{ route('product.translate', $product->siput) }}">
-                                            <button class="btn btn-sm text-info"><i class="fa fa-language"></i></button>
                                         </a>
                                         <form action="{{ route('product.destroy', $product->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                             @method('DELETE')
@@ -81,4 +78,9 @@
 <script src="{{ url('/') }}/backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{ url('/') }}/backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 <script src="{{ url('/') }}/backend/assets/js/pages/datatables.init.js"></script>
+<script type="text/javascript">
+    $('#product-datatable').DataTable({
+        "ordering": false
+    });
+</script>
 @endsection

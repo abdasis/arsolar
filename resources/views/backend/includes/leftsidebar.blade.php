@@ -98,12 +98,12 @@
                 </li>
 
                 <li>
-                    <a href="#sidebarProduk" data-toggle="collapse">
+                    <a href="#sidebarSlider" data-toggle="collapse">
                         <i class=" fas fa-images"></i>
                         <span> Slider </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarProduk">
+                    <div class="collapse" id="sidebarSlider">
                         <ul class="nav-second-level">
                             <li>
                                 <a href="{{ route('slider.create') }}">Tambah Slider</a>

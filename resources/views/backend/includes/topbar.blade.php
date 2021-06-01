@@ -79,7 +79,7 @@
             <a href="index.html" class="logo logo-dark text-center">
                 <span class="logo-sm">
                     <img src="{{ url('/') }}/backend/assets/images/logo-sm.png" alt="" height="22">
-                    <!-- <span class="logo-lg-text-light">UBold</span> -->
+                    <!-- <span class="logo-lg-text-light">ARsolar</span> -->
                 </span>
                 <span class="logo-lg">
                     <img src="{{ url('/') }}/backend/assets/images/logo-dark.png" alt="" height="20">

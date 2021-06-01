@@ -8,34 +8,34 @@
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">ARsolar</a></li>
                         <li class="breadcrumb-item"><a href="javascript: void(0);">Apps</a></li>
-                        <li class="breadcrumb-item active">Calendar</li>
+                        <li class="breadcrumb-item active">Produk</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Calendar</h4>
+                <h4 class="page-title">Produk</h4>
             </div>
         </div>
     </div>
     <form action="{{ route('product.update', $produk->id) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 @if (Session::has('status'))
                 <div class="alert alert-success">{{ Session::get('status') }} - <a
                         href="{{ route('product.index') }}"><b>Kembali</b></a></div>
                 @endif
                 <div class="card">
-                    <div class="card-header">
-                        Tambah Produk
-                    </div>
+                    <h5 class="card-header bg-white border-bottom">
+                        Edit Produk
+                    </h5>
                     <div class="card-body">
                         @csrf
                         <div class="form-group">
                             <label for="nama_produk">Nama Produk</label>
                             <input type="text" name="nama_produk" id="nama_produk"
                                 class="form-control shadow-none @error('nama_produk') is-invalid @enderror"
-                                value="{{ $produk->nama_produk }}" placeholder="Masukan Nama Product" required>
+                                value="{{ $produk->nama_produk }}" placeholder="Masukan Nama Product" required autocomplete="off">
                             @if ($errors->first('nama_produk'))
                             <small class="text-danger">{{ $errors->first('nama_produk') }}</small>
                             @endif
@@ -50,7 +50,33 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <h5 class="card-header bg-white border-bottom">
+                        Edit Product
+                    </h5>
+                    <div class="card-body">
+                        @csrf
+                        <div class="form-group">
+                            <label for="nama_produk_eng">Product Name</label>
+                            <input type="text" name="nama_produk_eng" id="nama_produk_eng"
+                                class="form-control shadow-none @error('nama_produk_eng') is-invalid @enderror"
+                                value="{{ $produk_eng->nama_produk }}" placeholder="Input Product Name" required autocomplete="off">
+                            @if ($errors->first('nama_produk_eng'))
+                            <small class="text-danger">{{ $errors->first('nama_produk_eng') }}</small>
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diskripsi_produk_eng">Product Description</label>
+                            <textarea id="editor" class="form-class"
+                                name="diskripsi_produk_eng">{{ $produk_eng->diskripsi }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         Option

@@ -123,15 +123,11 @@ class SiteController extends Controller
 
     public function about(Request $request)
     {
-        $site = Site::first();
-        if (!empty($site)) {
-            if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
-                $site->setLocale('id');
-            }else{
-                $site->setLocale('en');
-            }
-        }
-        return view('backend.pages.setting.about')->withSite($site);
+        $site = Site::first()->setLocale('id');
+        $site_eng = Site::first()->setLocale('en');
+        return view('backend.pages.setting.about')->with([
+            'site' => $site, 'site_eng' => $site_eng
+        ]);
     }
 
     public function contact(Request $request)
@@ -161,28 +157,15 @@ class SiteController extends Controller
 
     public function storeAbout(Request $request)
     {
-        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
-            if (Site::all()->count() > 0) {
-                $site = Site::first();
-                $site->about_us = ['id' => $request->get('aboutus')];
-                $site->save();
-            } else {
-                $site = new Site;
-                $site->about_us = ['id' => $request->get('aboutus')];
-                $site->save();
-            }
-        }else{
-            if (Site::all()->count() > 0) {
-                $site = Site::first();
-                $site->about_us = ['en' => $request->get('aboutus')];
-                $site->save();
-            } else {
-                $site = new Site;
-                $site->about_us = ['en' => $request->get('aboutus')];
-                $site->save();
-            }
+        if (Site::all()->count() > 0) {
+            $site = Site::first();
+            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $request->get('aboutus_eng')];
+            $data = $site->save();
+        } else {
+            $site = new Site;
+            $site->about_us = ['id' => $request->get('aboutus'), 'en' => $request->get('aboutus_eng')];
+            $data = $site->save();
         }
-
         return redirect()->back()->withStatus('Halaman About Berhasil Diperbarui');
     }
 }

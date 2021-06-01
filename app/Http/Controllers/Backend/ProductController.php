@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('id', 'DESC')->get();
         return view('backend.pages.product.index')->withProducts($products);
     }
 
@@ -50,21 +50,23 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
         try {
             DB::beginTransaction();
 
             $newProduct = new Product();
-            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $request->get('nama_produk')];
-            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $request->deskripsi_produk];
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $request->get('nama_produk_eng')];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $request->diskripsi_produk_eng];
             $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $request->get('kategori')];
             
             
             $newProduct->siput = Str::slug($request->get('nama_produk'));            
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {
-                $thumbnail = $request->file('thumbnail');
-                $thumbnail_name = Str::slug($request->get('nama_produk'), '-') . '-' . $thumbnail->getClientOriginalName();
-                $thumbnail->move('gambar-produk', $thumbnail_name);
+                $thumbnail = $_FILES['thumbnail']['name'];
+                $thumbnail_file = $request->file('thumbnail');
+                $thumbnail_name = Str::slug($request->get('nama_produk'), '-') . '-' . $thumbnail_file->getClientOriginalName();
+                $thumbnail_file->move('gambar-produk', $thumbnail_name);
                 $newProduct->thumbnail = $thumbnail_name;
             } else {
                 $newProduct->thumbnail = 'defaul-product-thumbnail.png';
@@ -100,13 +102,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
-            $produk = Product::find($id)->setLocale('id');
-        }else{
-            $produk = Product::find($id)->setLocale('en');
-        }
+        $produk = Product::find($id)->setLocale('id');        
+        $produk_eng = Product::find($id)->setLocale('en');        
         $categories = Category::all();
-        return view('backend.pages.product.edit')->withProduk($produk)->withCategories($categories);
+        return view('backend.pages.product.edit')->with([
+            'categories' => $categories, 'produk' => $produk, 'produk_eng' => $produk_eng
+        ]);
     }
 
     /**
@@ -121,18 +122,11 @@ class ProductController extends Controller
         try {
 
             DB::beginTransaction();
-            if(Session::get('bahasa')=='id' || empty(Session::get('bahasa'))){
-                $newProduct = Product::find($id)->setLocale('id');
-                $newProduct->nama_produk = ['id' => $request->get('nama_produk')];
-                $newProduct->diskripsi = ['id' => $request->deskripsi_produk];
-                $newProduct->kategori = ['id' => $request->get('kategori')];
-            }else{
-                $newProduct = Product::find($id)->setLocale('en');
-                $newProduct->nama_produk = ['en' => $request->get('nama_produk')];
-                $newProduct->diskripsi = ['en' => $request->deskripsi_produk];
-                $newProduct->kategori = ['en' => $request->get('kategori')];
-            }
-            
+            $newProduct = Product::find($id);
+            $newProduct->nama_produk = ['id' => $request->get('nama_produk'), 'en' => $request->get('nama_produk_eng')];
+            $newProduct->diskripsi = ['id' => $request->deskripsi_produk, 'en' => $request->diskripsi_produk_eng];
+            $newProduct->kategori = ['id' => $request->get('kategori'), 'en' => $request->get('kategori')];
+                        
             $newProduct->siput = Str::slug($request->get('nama_produk'));
             $newProduct->status_produk = $request->get('status');
             if ($request->hasFile('thumbnail')) {

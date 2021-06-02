@@ -6,7 +6,7 @@ $site = App\Models\Site::first();
 <footer class="bg-dark footer ">
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="pr-lg-4">
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
@@ -17,7 +17,7 @@ $site = App\Models\Site::first();
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">
                         {{ GoogleTranslate::trans('Produk Terbaru', Session::get('bahasa') ?? 'id') }}</p>
@@ -40,7 +40,7 @@ $site = App\Models\Site::first();
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">
                         {{ __('footer.tentang_kami') }}

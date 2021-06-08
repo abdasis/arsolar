@@ -13,7 +13,7 @@ $site = App\Models\Site::first();
                     </div>
                     <p class="text-white-50">{{$site->nama_situs }}
                     </p>
-                    <div class="text-white-50" style="text-align: justify;text-justify: inter-word;">{!! $site->about_us !!}</div>
+                    <div class="text-white-50" style="text-align: justify;text-justify: inter-word;font-size: 13px!important;">{!! $site->about_us !!}</div>
                 </div>
             </div>
 
@@ -26,7 +26,7 @@ $site = App\Models\Site::first();
                         @foreach ($recentproduk as $produk)
                         <li>
                             <a href="{{ route('produk.show', $produk->siput) }}"><i
-                                    class="mdi mdi-chevron-right mr-2"></i>{{ $produk->nama_produk }}
+                                    class="mdi mdi-chevron-right mr-2 font-13"></i>{{ $produk->nama_produk }}
                                 </p>
                             </a>
                         </li>
@@ -49,13 +49,13 @@ $site = App\Models\Site::first();
                         <li class="content">
                             <b><i class="mdi mdi-gmail"></i>
                                 Email</b>
-                            <p class="text-white" style="margin-bottom: 0px;">agussalim@ar-solarwindenergy.com <br>  dede@ar-solarwindenergy.com</p>
+                            <p class="text-white font-13" style="margin-bottom: 0px;">agussalim@ar-solarwindenergy.com <br>  dede@ar-solarwindenergy.com</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-whatsapp"></i>
                                 Phone
                             </b>
-                            <p class="text-white" style="margin-bottom: 0px;">+62811-152-528 <br> +62853-4109-3721</p>
+                            <p class="text-white font-13" style="margin-bottom: 0px;">+62811-152-528 <br> +62853-4109-3721</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i>

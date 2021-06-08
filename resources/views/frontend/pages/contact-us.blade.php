@@ -21,10 +21,10 @@
                         <div class="row align-items-center">
                             <div class="col-md-3"><i class="mdi mdi-map-marker  mx-auto mt-4 mdi-36px"></i></div>
                             <div class="col-md-9">
-                                <p class="font-11">
+                                <p class="font-12">
                                     Ruko The Palem Residence NO. 38B <br>
                                     Jl. H. Nausan Sriamur Tambun Utara <br>
-                                    (Samping Kantor Camat Tambun Utara ) <br>
+                                    (Samping Kantor Camat Tambun <br> Utara ) 
                                     West Java, Indonesia
                                 </p>
                             </div>
@@ -35,7 +35,7 @@
                     <div class="card p-1">
                         <div class="row align-items-center">
                             <div class="col-md-3"><i class="mdi mdi-phone mx-auto mt-4 mdi-36px"></i></div>
-                            <div class="col-md-9"><span class="pt-3" style="color:white;">middle  <br></span><span class="pt-3">+62811-152-528 <br> +62853-4109-3721</span><br> <br>
+                            <div class="col-md-9"><span class="pt-3 font-12" style="color:white;">middle  <br></span><span class="pt-3 font-12">+62811-152-528 <br> +62853-4109-3721</span><br> <br>
                             </div>
                         </div>
                     </div>

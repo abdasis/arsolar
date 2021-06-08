@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'nama_perusahaan' => 'PT. Anugrah Raya Energy solusi energi terbarukan dengan bernagai jenis produk yang kami tawarkan. Dengan produk yang
-                            berkuliatas dan layanan service kami dengan berbagai jenis',
+    'nama_perusahaan' => 'PT. Anugrah Raya Energy solusi energi terbarukan dengan bernagai jenis produk yang kami tawarkan. Dengan produk yang berkuliatas dan layanan service kami dengan berbagai jenis antara lain: ',
     '1' => 'Test Tegangan Tembus',
     '2' => 'Treatment oli trafo',
     '3' => 'Repaire transformer',

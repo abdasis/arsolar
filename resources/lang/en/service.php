@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'nama_perusahaan' => 'PT. Anugrah Raya Energy is a renewable energy solution with the various types of products we offer. With that product
-                             quality and our services with various types',
+    'nama_perusahaan' => 'PT. Anugrah Raya Energy renewable energy solutions with various types of products that we offer. With quality products and our various types of services, including: ',
     '1' => 'Breakthrough Voltage Test',
     '2' => 'Transformer oil treatment',
     '3' => 'Repaire transformer',

@@ -5,7 +5,7 @@ $site = App\Models\Site::first();
 
 <footer class="bg-dark footer ">
     <div class="container-fluid">
-        <div class="row mb-5 justify-content-center">
+        <div class="row mb-5 justify-content-center" style="margin-bottom: 0px!important;">
             <div class="col-lg-4">
                 <div class="pr-lg-4">
                     <div class="mb-4">
@@ -49,19 +49,19 @@ $site = App\Models\Site::first();
                         <li class="content">
                             <b><i class="mdi mdi-gmail"></i>
                                 Email</b>
-                            <p class="text-white">agussalim@ar-solarwindenergy.com <br> sabar@ar-solarwindenergy.com</p>
+                            <p class="text-white" style="margin-bottom: 0px;">agussalim@ar-solarwindenergy.com <br>  dede@ar-solarwindenergy.com</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-whatsapp"></i>
                                 Phone
                             </b>
-                            <p class="text-white">+62811-152-528 <br> +62812-9591-7075</p>
+                            <p class="text-white" style="margin-bottom: 0px;">+62811-152-528 <br> +62853-4109-3721</p>
                         </li>
                         <li class="content">
                             <b><i class="mdi mdi-map"></i>
                                 {{ __('footer.alamat') }}
                             </b>
-                            <p class="text-white font-13">
+                            <p class="text-white font-13" style="margin-bottom: 0px;">
                                 Ruko The Palem Residence NO. 38B <br>
                                 Jl. H. Nausan Sriamur Tambun Utara <br>
                                 (Samping Kantor Camat Tambun Utara ) <br>

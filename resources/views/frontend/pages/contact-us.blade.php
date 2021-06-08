@@ -35,7 +35,8 @@
                     <div class="card p-1">
                         <div class="row align-items-center">
                             <div class="col-md-3"><i class="mdi mdi-phone mx-auto mt-4 mdi-36px"></i></div>
-                            <div class="col-md-9"><span class="pt-3">+62811-152-528 <br> +62812-9591-7075</span></div>
+                            <div class="col-md-9"><span class="pt-3" style="color:white;">middle  <br></span><span class="pt-3">+62811-152-528 <br> +62853-4109-3721</span><br> <br>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,7 +45,8 @@
                         <div class="row align-items-center">
                             <div class="col-md-3"><i class="mdi mdi-gmail mx-auto mt-4 mdi-36px"></i></div>
                             <div class="col-md-9">
-                                <span>agussalim@ar-solarwindenergy.com <br> sabar@ar-solarwindenergy.com</span>
+                                <span class="pt-3" style="color:white;">middle  <br></span>
+                                <span class="font-12">agussalim@ar-solarwindenergy.com <br>  dede@ar-solarwindenergy.com</span><br> <br>
                             </div>
                         </div>
                     </div>

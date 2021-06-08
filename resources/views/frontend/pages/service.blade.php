@@ -18,25 +18,15 @@
                         </p>
 
                         <ol type="1" class="fa-list-ol p-0 mt-2 ml-2">
-                            <li>{{ __('service.1') }}
-                            </li>
-                            <li>
+                            <li>{{ __('service.1') }}</li>
                             <li>{{ __('service.2') }}</li>
                             <li>{{ __('service.3') }}</li>
-                            <li>{{ __('service.4') }}
-                            </li>
-                            <li>{{ __('service.5') }}
-                            </li>
-                            <li>{{ __('service.6') }}
-                            </li>
-                            <li>{{ __('service.7') }}
-                            </li>
-                            <li>{{ __('service.8') }}
-                            </li>
-                            <li>{{ __('service.9') }}
-                            </li>
-                            <li>{{ __('service.10') }}
-                            </li>
+                            <li>{{ __('service.4') }}</li>
+                            <li>{{ __('service.5') }}</li>
+                            <li>{{ __('service.6') }}</li>
+                            <li>{{ __('service.7') }}</li>
+                            <li>{{ __('service.8') }}</li>
+                            <li>{{ __('service.9') }}</li>
                         </ol>
                     </div>
                 </div>

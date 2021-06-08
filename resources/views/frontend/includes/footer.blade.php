@@ -6,14 +6,14 @@ $site = App\Models\Site::first();
 <footer class="bg-dark footer ">
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center" style="margin-bottom: 0px!important;">
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="pr-lg-4">
                     <div class="mb-4">
                         <img src="{{ url('/') }}/frontend/assets/images/{{ $site->logo }}" alt="" height="30">
                     </div>
-                    <p class="text-white-50">{{$site->judul }}
+                    <p class="text-white-50">{{$site->nama_situs }}
                     </p>
-                    <p class="text-white-50">{!! $site->kutipan !!}</p>
+                    <div class="text-white-50" style="text-align: justify;text-justify: inter-word;">{!! $site->about_us !!}</div>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@ $site = App\Models\Site::first();
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="footer-list">
                     <p class="text-white mb-2 footer-list-title">
                         {{ __('footer.tentang_kami') }}
